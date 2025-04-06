@@ -43,9 +43,9 @@ export default function HeaderComponent() {
           disabled={isDisabled}
           onClick={toggleMenu}
         >
-          <span className={`menu-button__line ${menuOpen ? "menu-button__line__animation" : ""}`}></span>
-          <span className={`menu-button__line ${menuOpen ? "menu-button__line__animation" : ""}`}></span>
-          <span className={`menu-button__line ${menuOpen ? "menu-button__line__animation" : ""}`}></span>
+          <span className={`menu-button__line ${menuOpen ? "menu-button__line__animation-true" : "menu-button__line__animation-false"}`}></span>
+          <span className={`menu-button__line ${menuOpen ? "menu-button__line__animation-true" : "menu-button__line__animation-false"}`}></span>
+          <span className={`menu-button__line ${menuOpen ? "menu-button__line__animation-true" : "menu-button__line__animation-false"}`}></span>
         </button>
       </div>
 

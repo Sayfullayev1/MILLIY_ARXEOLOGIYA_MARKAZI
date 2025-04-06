@@ -39,13 +39,13 @@ export default function HeaderComponent() {
 
       <div className='menu-button_wrapper'>
         <button
-          className={`menu-button ${menuOpen ? 'open' : ''}`}
+          className={`menu-button ${menuOpen ? 'menu-button__open' : ''}`}
           disabled={isDisabled}
           onClick={toggleMenu}
         >
-          <span className='menu-button__line'></span>
-          <span className='menu-button__line'></span>
-          <span className='menu-button__line'></span>
+          <span className={`menu-button__line ${menuOpen ? "menu-button__line__animation" : ""}`}></span>
+          <span className={`menu-button__line ${menuOpen ? "menu-button__line__animation" : ""}`}></span>
+          <span className={`menu-button__line ${menuOpen ? "menu-button__line__animation" : ""}`}></span>
         </button>
       </div>
 

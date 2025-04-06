@@ -8,8 +8,8 @@
     left: 0;
     z-index: 200;
     transform: translateX(100%);
-    background-color: rgb(255, 255, 255);
-
+    background-color: white;
+    // border-left: 2px solid #979797;
 
     &__list {
         display: flex;

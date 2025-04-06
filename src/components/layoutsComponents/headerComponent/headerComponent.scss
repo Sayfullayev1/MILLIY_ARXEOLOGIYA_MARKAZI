@@ -1,9 +1,11 @@
 .header {
   width: 100%;
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  padding: 10px;
-  background-color: #f8f9fa;
+  padding: 5px 10px ;
+  background-color: #ffffff;
+  
 
   &__container {
     display: flex;
@@ -15,6 +17,7 @@
   }
 
   &__title {
+    max-width: 190px;
     font-size: 15px;
     font-weight: bold;
     text-align: center;
@@ -29,14 +32,16 @@
 }
 
 .menu-button {
+  height: 20.15px;
   background: none;
   border: none;
   cursor: pointer;
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  justify-content: space-between; 
+  
   position: relative;
-  z-index: 250;
+  z-index: 200;
 
   -webkit-tap-highlight-color: transparent;
 
@@ -44,28 +49,87 @@
     width: 30px;
   } 
 
+  &__open{
+    animation: buttonOpen 1s ease-in-out forwards;
+  }
+
+  @keyframes buttonOpen {
+    0% {
+      opacity: 0;
+      z-index: 200;
+    }
+    50% {
+      opacity: 0;
+      z-index: 200;
+    }
+    100% {
+      opacity: 1;
+      z-index: 250;
+    }
+  
+  }
+
+
   &__line {
     width: 25px;
     height: 3px;
     background-color: #333;
     transition: transform 0.3s, opacity 0.3s;
+
+    &__animation{
+
+
+
+      &:nth-child(1) {
+        // Стили для первого элемента
+        animation: line1 1s ease-in-out forwards;
+      }
+
+      @keyframes line1 {
+        from {
+          transform: rotate(0deg);
+          transform-origin: left; // фиксируем левый край
+        }
+        to {
+          transform: rotate(45deg); // поворот вправо и вниз
+          transform-origin: left;
+        }
+      }
+      
+    
+      &:nth-child(2) {
+        animation: line2 1 ease-in-out forwards;
+      }
+
+      @keyframes line2 {
+        0% {
+          opacity: 1;
+        }
+        20% {
+          opacity: 10;
+        }
+        100% {
+          opacity: 0;
+        }
+      }
+    
+      &:nth-child(3) {
+        animation: line3 1s ease-in-out forwards;
+      }
+
+      @keyframes line3 {
+        from {
+          transform: rotate(0deg);
+          transform-origin: left; // фиксируем левый край
+        }
+        to {
+          transform: rotate(-45deg); // поворот вправо и вниз
+          transform-origin: left;
+        }
+      }
+    }
+    
   }
 
-  &:hover &__line {
-    background-color: #555;
-  }
-
-  &.open {
-    &__line:nth-child(1) {
-      transform: rotate(45deg) translate(5px, 5px);
-    }
-
-    &__line:nth-child(2) {
-      opacity: 0;
-    }
-
-    &__line:nth-child(3) {
-      transform: rotate(-45deg) translate(5px, -5px);
-    }
-  }
+  
 }

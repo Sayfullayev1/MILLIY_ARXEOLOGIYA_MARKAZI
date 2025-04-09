@@ -1,16 +1,19 @@
 import React from 'react'
 import './homePage.scss'
 
-import Carousel from './items/carousel/Carousel'
+import Main from './items/main/Main'
+
+
 
 export default function HomePage() {
-
-
  
 
   return (
     <div className="home-page">
-     <Carousel/>
+      <div className='home-page__main_wrapper'>
+        <Main/> 
+      </div> 
+
     </div> 
   )
 }

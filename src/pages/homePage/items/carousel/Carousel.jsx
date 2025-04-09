@@ -18,16 +18,16 @@ export default function Carousel() {
   };
 
   useEffect(() => {
-    const interval = setInterval(nextSlide, 5000);
+    const interval = setInterval(nextSlide, 8000);
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <div className="carousel">
-      <div className="carousel__slides">
+    <div className="home-page__carousel">
+      <div className="home-page__carousel__slides">
         {images.map((src, i) => (
           <div 
-            className={`carousel__slide ${i === index ? 'active' : ''}`} 
+            className={`home-page__carousel__slide ${i === index ? 'home-page__carousel__slide__active' : ''}`} 
             key={i}
             style={{ 
               opacity: i === index ? 1 : 0,
@@ -39,11 +39,11 @@ export default function Carousel() {
         ))}
       </div>
 
-      <div className="carousel__dots">
+      <div className="home-page__carousel__dots">
         {images.map((_, i) => (
           <span
             key={i}
-            className={`carousel__dot ${i === index ? 'active' : ''}`}
+            className={`home-page__carousel__dot ${i === index ? 'home-page__carousel__dot-active' : ''}`}
             onClick={() => goToSlide(i)}
           ></span>
         ))}

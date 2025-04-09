@@ -1,10 +1,15 @@
-import React, { useEffect } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
+import React, { useContext, useEffect } from 'react';
+import { useNavigate, useLocation, Link } from 'react-router-dom';
 import './navbarComponent.scss';
+import { LanguageContext } from '../../../context/LanguageContext';
 
 export default function NavbarComponent() {
   const navigate = useNavigate();
   const location = useLocation();
+  const { language } = useContext(LanguageContext);
+
+  console.log(language);
+  
 
   useEffect(() => {
     if (location.pathname === '/') {
@@ -12,14 +17,52 @@ export default function NavbarComponent() {
     }
   }, [location, navigate]);
 
+
+  let data = [  
+      {
+        Name: {
+          uz: "Bosh sahifa",
+          ru: "Главная",
+          en: "Main",
+        },
+        link: "/",
+      },
+      {
+        Name: {
+          uz: "Bosh sahifa",
+          ru: "Главная",
+          en: "Main",
+
+          items: {
+            
+          },
+        },
+        link: "/about",
+      },
+    ]
+
+
+
   return (
     <nav className="navbar">
-      {/* <ul className="navLinks">
-        <li><a href="#home" className="link">Home</a></li>
-        <li><a href="#about" className="link">About</a></li>
-        <li><a href="#services" className="link">Services</a></li>
-        <li><a href="#contact" className="link">Contact</a></li>
-      </ul> */}
+      
+      <div>
+        <ul>
+          {
+            data.map((item, index) => {
+              return(
+                <li>
+                  {/* <Link to={`${location.pathname}/${item.link}`}>{item.item[location.link]}</Link> */}
+                  {item.Name[language]}
+                </li>
+              )
+            })
+          }
+        </ul>
+      </div>
+
+      <div>dd</div>
+      
     </nav>
   );
 }

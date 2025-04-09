@@ -1,0 +1,75 @@
+.header__topbar{
+    padding: 10px 3%;
+    border-bottom: 0.8px solid #c6c6c6;
+
+    &__text{
+        
+        display: flex;
+        gap: 5px;
+
+        &>h1{
+            font-size: 13px;
+            font-weight: 500;
+            color: #2e2e2e;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+            
+            &:hover{
+                color: #0060f0;
+                text-decoration: underline;
+            }
+        }
+    }
+
+
+    &__socials{
+
+        padding: 0 4%;
+        
+        &__text{
+            font-size: 13px;
+            font-weight: 300;
+        }
+    }
+}
+
+
+@media (min-width: 590px) {
+    .header__topbar{
+        padding: 14px 3%;
+        display: flex;
+        gap: 25px;
+
+        &__socials{
+
+            padding: 0;
+            
+            &__text{
+                font-size: 13px;
+                font-weight: 300;
+            }
+        }
+    }
+}
+
+
+
+@media (min-width: 690px) {
+    .header__topbar{
+        padding: 14px 5%;
+        display: flex;
+        gap: 25px;
+
+    }
+}
+
+
+
+@media (min-width: 990px) {
+    .header__topbar{
+        padding: 14px 5%;
+        display: flex;
+        gap: 25px;
+
+    }
+}

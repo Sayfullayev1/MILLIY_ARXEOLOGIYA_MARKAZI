@@ -11,7 +11,7 @@ function Menu( toggleMenu ) {
   useEffect(() => {
 
     if (i > 0) {
-      if (!toggleMenu?.Bedeutung) {
+      if (!toggleMenu?.Bedeutung) {   
         setMenuOpen("menu-item__inactive");
       } else if (toggleMenu?.Bedeutung) {
         setMenuOpen("menu-item__active");

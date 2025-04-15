@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 import logoImage from '../../../public/images/logoImage/605db5a8b7a81.png';
 import Menu from './items/menu/Menu';
 import Topbar from './items/topbar/Topbar';
+import Info from './items/info/Info';
 
 
 export default function HeaderComponent() {
@@ -71,6 +72,7 @@ export default function HeaderComponent() {
             <span className='header__subtitle'>{LogoTitle[language].subtitle}</span>
           </h1>
         </div>
+        
 
         <div className='menu-button_wrapper'>
           <button
@@ -84,7 +86,13 @@ export default function HeaderComponent() {
           </button>
         </div>
 
-        {<Menu Bedeutung={ menuOpen } />}
+        <div className='header__info-wrapper'>
+          <Info/>
+        </div>
+
+        {/* <div className='header__menu-wrapper'> */}
+          {<Menu Bedeutung={ menuOpen } />}
+        {/* </div> */}
 
       </div>
     </header>

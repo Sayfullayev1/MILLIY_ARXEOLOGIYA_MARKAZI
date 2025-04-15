@@ -20,10 +20,10 @@
 
 
     &__active {
-      animation: fadeIn 1s ease-in-out forwards;
+      animation: fadeIn_menu-item 1s ease-in-out forwards;
     }
 
-    @keyframes fadeIn {
+    @keyframes fadeIn_menu-item {
         from {
             transform: translateX(100%);
         }
@@ -33,10 +33,10 @@
     }
 
     &__inactive {
-        animation: fadeOut 1s ease-in-out forwards;
+        animation: fadeOut_menu-item 1s ease-in-out forwards;
     }
 
-    @keyframes fadeOut {
+    @keyframes fadeOut_menu-item {
         from {
             transform: translateX(0);
         }

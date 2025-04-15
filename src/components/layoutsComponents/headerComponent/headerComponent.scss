@@ -5,12 +5,12 @@
   &_wrapper{
     display: flex;
     justify-content: space-between;
+
     align-items: center;
     padding: 5px 10px ;
     background-color: #ffffff;
     font-family: "Roboto", sans-serif;
   }
-  
 
 
   &__topbar_wrapper{
@@ -45,12 +45,16 @@
     display: block;
   }
 
+  &__info-wrapper{
+    display: none;
+  }
   
 }
 
 .menu-button {
   height: 20.15px;
   background: none;
+  margin-left: auto;
   border: none;
   cursor: pointer;
   display: flex;
@@ -159,7 +163,6 @@
   .header__title {
     text-align: left;
     margin: 10px 12px;
-
   }
 }
 
@@ -182,11 +185,11 @@
     }
   
     &__title {
-      max-width: 250px;
+      max-width: 290px;
       font-size: 22px;
       font-weight: bold;
       margin: 10px 15px;
-      // text-align: left;
+      // text-align: left;  
     }
   
     &__subtitle {
@@ -194,8 +197,81 @@
       font-weight: normal;
       display: block;
     }
-  
   }
   
   
+}
+
+
+@media (min-width: 900px) {
+  .header{
+  
+    &_wrapper{
+      padding: 8px 5%;
+      justify-content: flex-start;
+      gap: 5px; 
+    }
+
+    &__info-wrapper{
+      display: inline;
+    }
+
+    &__menu-wrapper{
+      display: none;
+    }
+  }
+
+  .menu-button_wrapper{
+    display: none;
+  }
+}
+
+
+@media (min-width: 1200px) {
+  .header{
+  
+    &_wrapper{
+      padding: 8px 5%;
+      justify-content: space-between;
+      // gap: 25px; 
+    }
+
+    &__info-wrapper{
+      display: inline;
+    }
+
+    &__menu-wrapper{
+      display: none;
+    }
+  }
+
+  .menu-button_wrapper{
+    display: none;
+  }
+}
+
+
+
+@media (min-width: 1300px) {
+  .header{
+  
+    &_wrapper{
+      padding: 8px 10%;
+    }
+
+  }
+
+}
+
+
+
+@media (min-width: 1400px) {
+  .header{
+  
+    &_wrapper{
+      padding: 8px 13%;
+    }
+
+  }
+
 }

@@ -3,10 +3,16 @@ import './carousel.scss';
 
 export default function Carousel() {
   const [index, setIndex] = useState(0);
+  // const images = [
+  //   'https://picsum.photos/id/1015/400/800',
+  //   'https://picsum.photos/id/1016/400/800',
+  //   'https://picsum.photos/id/1018/400/800',
+  // ];
+
   const images = [
-    'https://picsum.photos/id/1015/400/800',
-    'https://picsum.photos/id/1016/400/800',
-    'https://picsum.photos/id/1018/400/800',
+    'https://botany.uz/wp-content/uploads/2021/08/Eremurus_aitchisonii.jpg',
+    'https://botany.uz/wp-content/uploads/2021/08/Acantholimon_litvinovii.jpg',
+    'https://botany.uz/wp-content/uploads/2021/08/Acantholimon_litvinovii.jpg',
   ];
 
   const nextSlide = () => {

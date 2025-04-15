@@ -1,29 +1,104 @@
 .navbar {
+  font-family: "Roboto", sans-serif;
 
-
+  &__container{
+    display: none;
   }
-  
-  // .logo {
-  //   font-size: 1.5rem;
-  //   font-weight: bold;
-  // }
-  
-  // .navLinks {
-  //   list-style: none;
-  //   display: flex;
-  //   gap: 1.5rem;
-  //   margin: 0;
-  //   padding: 0;
-  // }
-  
-  // .link {
-  //   text-decoration: none;
-  //   color: #fff;
-  //   font-size: 1rem;
-  //   transition: color 0.3s ease;
-  // }
-  
-  // .link:hover {
-  //   color: #00bcd4;
-  // }
-  
+}
+
+
+@media (min-width: 1000px) {
+    .navbar {
+      &__container{
+        width: 100%;
+        height: 60px;
+        padding: 0 5%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #086f36;
+      }
+
+
+      &_wrap{
+        width: 75%;
+        display: flex;
+      }
+
+      &__list{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        list-style: none;
+      }
+
+      &__item{
+        display: flex;
+        align-items: center;
+        height: 60px;
+        position: relative;
+        &:hover .navbar__submenu {
+          display: block; // Показываем подменю при наведении
+        }
+
+        &:hover::after {
+          content: "";
+          position: absolute;
+          bottom: 0; // Линия будет внизу текста
+          left: -10%;
+          width: 120%;
+          height: 3px;
+          background-color: #337ab7; // Цвет линии
+        }
+
+        &__link{
+          font-weight: 700;
+          font-size: 14px;
+          color: inherit;
+          text-transform: uppercase;
+          color: #ffffff;
+          text-decoration: none;
+        }
+      }
+
+      &__submenu {
+        display: none; // Скрываем подменю по умолчанию
+        position: absolute;
+        top: 100%; // Располагаем подменю под родительским элементом
+        left: -10%;
+        background-color: #ffffff;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        list-style: none;
+        z-index: 10;
+
+        &__item {
+          padding: 15px 20px;
+
+          &:hover {
+            background-color: #f0f0f0;
+          }
+        }
+        &__link {
+          font-size: 14px;
+          color: #333333;
+          text-transform: uppercase;
+          text-decoration: none;
+          // white-space: nowrap; // Добавлено свойство для предотвращения переноса текста
+        }
+      }
+
+
+      &__search{
+        width: 20%;
+      }
+    }
+}
+
+
+@media (min-width: 1300px) {
+  .navbar {
+    &__container{
+      padding: 0 13%;
+    }
+  }
+}

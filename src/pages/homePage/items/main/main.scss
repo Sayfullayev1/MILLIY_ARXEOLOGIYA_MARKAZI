@@ -3,6 +3,7 @@
 
     &__items{
         margin-top: 50px;
+        padding: 0 4%;
     }
 
     &__item {
@@ -22,7 +23,7 @@
 
       &__title {
         font-size: 20px;
-        font-weight: 500;
+        font-weight: 400;
         margin: 15px 0;
         color: #333;
       }
@@ -30,12 +31,64 @@
       &__text {
         font-size: 1rem;
         color: #666;
-        padding: 0 15px 15px;
+        padding: 0 5px ;
       }
     }
 
 
   &__news__wrapper{
-    padding: 0 8%;
+    padding: 0 4%;
+
+    &>h1{
+      font-size: 24px;
+      font-weight: 500;
+      margin: 30px 0;
+      position: relative;
+
+      &:after {
+        content: "";
+        position: absolute;
+        bottom: -10px; // Линия будет внизу текста
+        left: 0;
+        width: 30px;
+        height: 1px;
+        background-color: #337ab7; // Цвет линии
+      }
+    }
   }
+}
+
+
+
+@media (min-width: 750px) {
+  .home-page__main{
+  
+    &__items{
+      width: 100%;
+      padding: 0 5%;
+      display: flex;
+      justify-content: space-between;
+      margin-top: 30px;
+    }
+
+    &__item{
+      width: 30%;
+      &__img-wrapper {
+        width: 40px;
+        height: 70px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      &__title {
+        font-size: 18px;
+        margin: 10px 0;
+      }
+      &__text {
+        font-size: 0.9rem;
+      }
+    }
+  }
+
+  
 }

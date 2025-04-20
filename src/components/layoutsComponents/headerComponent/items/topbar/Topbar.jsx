@@ -65,6 +65,8 @@ export default function Topbar() {
   return (
     <div className='header__topbar' >
 
+      <div className='header__topbar__container'>
+
         <div className='header__topbar__text'>
 
             <h1 onClick={(e) => handleLanguageChange("uz",e) } >O`zbekcha</h1>
@@ -77,9 +79,11 @@ export default function Topbar() {
 
         <div className='header__topbar__socials'>
             <p className='header__topbar__socials__text'>
-                <i className="bi bi-house-fill"></i> {locationText}
+            <i class="fa fa-home"></i>  {locationText}
             </p>
         </div>
+
+      </div>
 
     </div>
   )

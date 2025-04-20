@@ -1,30 +1,70 @@
 .footer {
-  padding: 1rem 2rem;
-  background-color: #007bff;
+  background-color: #2a2a2a;
   color: #fff;
-  text-align: center;
-  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+  padding: 40px 20px;
+  font-family: sans-serif;
 }
 
-.footer__content {
+.footer__container {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+}
+
+.footer__section {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  gap: 10px;
 }
 
-.footer__nav ul {
+.footer__title {
+  font-size: 14px;
+  color: #ccc;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.footer__links {
   list-style: none;
-  display: flex;
-  gap: 1rem;
   padding: 0;
-  margin: 0.5rem 0 0;
+  margin: 0;
 }
 
-.footer__nav a {
-  color: #fff;
-  text-decoration: none;
+.footer__links li {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #eee;
+  cursor: pointer;
 }
 
-.footer__nav a:hover {
-  text-decoration: underline;
+.footer__search {
+  padding: 8px;
+  font-size: 14px;
+  width: 100%;
+  margin-bottom: 10px;
 }
+
+.footer__image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.footer__social {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+// .icon-facebook::before {
+//   content: '📘';
+// }
+
+// .icon-rss::before {
+//   content: '📡';
+// }
+

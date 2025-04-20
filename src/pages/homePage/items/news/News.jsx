@@ -4,7 +4,6 @@ import './news.scss'
 import { LanguageContext } from '../../../../context/LanguageContext';
 import { Link } from 'react-router-dom';
 
-import 'bootstrap-icons/font/bootstrap-icons.css';
 
 
 
@@ -25,27 +24,7 @@ export default function News() {
         },
         {
             title: {
-                uz:"O‘zbekiston florasi laboratoriyasi xodimlari Qarshi davlat universitetida ilmiy-amaliy seminar o‘tkazdi",
-                ru: "Сотрудники лаборатории флоры Узбекистана провели научно-практический семинар в Каршинском государственном университете",
-                en: "Employees of the Uzbekistan Flora Laboratory held a scientific and practical seminar at Karshi State University",
-            },
-            data: "07.04.2025",
-            img: 'https://picsum.photos/id/1015/400/800',
-            link: '/uz/news/1',
-        },
-        {
-            title: {
-                uz:"O‘zbekiston florasi laboratoriyasi xodimlari Qarshi davlat universitetida ilmiy-amaliy seminar o‘tkazdi",
-                ru: "Сотрудники лаборатории флоры Узбекистана провели научно-практический семинар в Каршинском государственном университете",
-                en: "Employees of the Uzbekistan Flora Laboratory held a scientific and practical seminar at Karshi State University",
-            },
-            data: "07.04.2025",
-            img: 'https://picsum.photos/id/1015/400/800',
-            link: '/uz/news/1',
-        },
-        {
-            title: {
-                uz:"O‘zbekiston florasi laboratoriyasi xodimlari Qarshi davlat universitetida ilmiy-amaliy seminar o‘tkazdi",
+                uz:"O‘zbekiston florasi laboratoriyasi xodimlari Qarshi davlat universitetida ilmiy-amaliy seminar o‘tkazdiz",
                 ru: "Сотрудники лаборатории флоры Узбекистана провели научно-практический семинар в Каршинском государственном университете",
                 en: "Employees of the Uzbekistan Flora Laboratory held a scientific and practical seminar at Karshi State University",
             },
@@ -171,7 +150,7 @@ export default function News() {
                         </Link>
                     </div>
 
-                    <p className='home-page__news__item__data'> <i className="bi bi-calendar3"></i> {item.data}</p>
+                    <p className='home-page__news__item__data'> <i class="fa-regular fa-calendar-days"></i>  {item.data}</p>
                     
                     <Link className='home-page__news__item__link' to={item.link}>
                         <h1 className='home-page__news__item__title'>{item.title[language]}</h1>
@@ -180,6 +159,5 @@ export default function News() {
             ))
         }
     </div>
-    
   )
 }

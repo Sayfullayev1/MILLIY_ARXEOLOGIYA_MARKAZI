@@ -254,24 +254,19 @@
 
 @media (min-width: 1300px) {
   .header{
+
+    
+    
+
+    padding: 0;
   
     &_wrapper{
-      padding: 8px 10%;
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 8px 4%;
     }
 
   }
 
 }
 
-
-
-@media (min-width: 1400px) {
-  .header{
-  
-    &_wrapper{
-      padding: 8px 13%;
-    }
-
-  }
-
-}

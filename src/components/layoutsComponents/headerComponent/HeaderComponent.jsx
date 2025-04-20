@@ -95,6 +95,7 @@ export default function HeaderComponent() {
         {/* </div> */}
 
       </div>
+      
     </header>
   );
 }

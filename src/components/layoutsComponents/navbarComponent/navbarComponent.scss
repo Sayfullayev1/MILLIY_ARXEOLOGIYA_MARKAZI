@@ -96,9 +96,16 @@
 
 
 @media (min-width: 1300px) {
+  
   .navbar {
+    width: 100%;
+    background-color: #086f36;
+
+
     &__container{
-      padding: 0 13%;
+      max-width: 1300px;
+      padding: 0 4%;
+      margin: 0 auto;
     }
   }
 }

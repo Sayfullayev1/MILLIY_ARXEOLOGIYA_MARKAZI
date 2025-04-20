@@ -15,7 +15,7 @@ export default function Info() {
 
         <div className='header__info-item'>
             <div className='header__info-icon'>
-                <i className="bi bi-telephone-fill"></i>
+                <i class="fa-solid fa-phone"></i>
             </div>
             <div className='header__info-text'>
                     <h1>
@@ -27,7 +27,7 @@ export default function Info() {
 
         <div className='header__info-item'>
             <div className='header__info-icon'>
-                <i className="bi bi-stopwatch"></i>
+                <i class="fa-regular fa-clock"></i>
             </div>
             <div className='header__info-text'>
                 <h1>

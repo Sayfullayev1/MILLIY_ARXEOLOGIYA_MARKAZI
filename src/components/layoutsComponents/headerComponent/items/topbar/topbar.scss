@@ -42,8 +42,12 @@
 @media (min-width: 590px) {
     .header__topbar{
         padding: 14px 3%;
-        display: flex;
-        gap: 25px;
+
+
+        &__container{
+            display: flex;
+            gap: 25px;
+        }
 
         &__socials{
 
@@ -62,40 +66,25 @@
 @media (min-width: 690px) {
     .header__topbar{
         padding: 14px 4%;
-        display: flex;
-        gap: 25px;
-
     }
 }
 
 
-
-@media (min-width: 990px) {
-    .header__topbar{
-        padding: 14px 4%;
-        display: flex;
-        gap: 25px;
-
-    }
-}
 
 
 
 @media (min-width: 1300px) {
     .header__topbar{
-        padding: 14px 9%;
-        display: flex;
-        gap: 25px;
-
+        padding: 14px 0;
+    
+        &__container{
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0px 3%;
+            display: flex;
+            gap: 25px;
+        }
     }
 }
 
 
-@media (min-width: 1400px) {
-    .header__topbar{
-        padding: 14px 12%;
-        display: flex;
-        gap: 25px;
-
-    }
-}

@@ -47,10 +47,7 @@ export default function SearchComponent() {
                 className="search-component__button"
                 onClick={() => handleSearch()}
                 >
-                <svg xmlns="http://www.w3.org/2000/svg" width="23" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="11" cy="11" r="7" />
-                    <line x1="16.65" y1="16.65" x2="21" y2="21" />
-                </svg>
+                <i class="fa-solid fa-magnifying-glass"></i>
             </button>  
         </div>
 

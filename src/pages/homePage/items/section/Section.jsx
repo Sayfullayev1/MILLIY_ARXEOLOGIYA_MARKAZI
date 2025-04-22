@@ -102,7 +102,7 @@ export default function Section() {
                 <div className="home-page__section__stats-section__wrapper">
                     {
                         data.map((item, index) => (
-                            <div className="home-page__section__stat-item">
+                            <div className="home-page__section__stat-item" key={index}>
                                 {item.icon}
                                 <div className="home-page__section__number">
                                     {isVisible ? (

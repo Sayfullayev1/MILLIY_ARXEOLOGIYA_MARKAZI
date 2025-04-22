@@ -47,7 +47,7 @@ export default function SearchComponent() {
                 className="search-component__button"
                 onClick={() => handleSearch()}
                 >
-                <i class="fa-solid fa-magnifying-glass"></i>
+                <i className="fa-solid fa-magnifying-glass"></i>
             </button>  
         </div>
 

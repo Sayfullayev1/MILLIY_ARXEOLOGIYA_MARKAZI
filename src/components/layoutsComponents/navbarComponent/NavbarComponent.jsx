@@ -11,7 +11,6 @@ export default function NavbarComponent() {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
 
-  console.log(language);
   
 
   useEffect(() => {
@@ -24,7 +23,7 @@ export default function NavbarComponent() {
     if (searchQuery.trim() === '') {
       setIsSearchOpen(false);
     } else {
-      console.log('Search query:', searchQuery); // Placeholder for search logic
+      // console.log('Search query:', searchQuery); // Placeholder for search logic
     }
   };
 

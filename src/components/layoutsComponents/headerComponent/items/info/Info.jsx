@@ -8,14 +8,13 @@ import { LanguageContext } from '../../../../../context/LanguageContext';
 export default function Info() {
     const { language } = useContext(LanguageContext);
 
-    console.log("ddd", language);
                     
   return (
     <div className='header__info'>
 
         <div className='header__info-item'>
             <div className='header__info-icon'>
-                <i class="fa-solid fa-phone"></i>
+                <i className="fa-solid fa-phone"></i>
             </div>
             <div className='header__info-text'>
                     <h1>
@@ -27,7 +26,7 @@ export default function Info() {
 
         <div className='header__info-item'>
             <div className='header__info-icon'>
-                <i class="fa-regular fa-clock"></i>
+                <i className="fa-regular fa-clock"></i>
             </div>
             <div className='header__info-text'>
                 <h1>

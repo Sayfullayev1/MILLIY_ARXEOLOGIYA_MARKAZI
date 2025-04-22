@@ -2,6 +2,41 @@ import React from 'react';
 import './footerComponent.scss';
 
 export default function FooterComponent() {
+
+
+  const links = [
+    {
+      href: "https://botany.uz/uz/category/science_ads/",
+      text: "Dissertatsiya himoyalari va avtoreferatlar",
+      multiline: true,
+    },
+    {
+      href: "https://botany.uz/uz/category/lab/goel/",
+      text: "Geobotanika laboratoriyasi",
+    },
+    {
+      href: "https://botany.uz/uz/category/lab/lmfb/",
+      text: "Molekulyar filogeniya va biogeografiya laboratoriyasi",
+      multiline: true,
+    },
+    {
+      href: "https://botany.uz/uz/category/lab/lfu/",
+      text: "O'zbekiston florasi laboratoriyasi",
+    },
+    {
+      href: "https://botany.uz/uz/category/lab/lma/",
+      text: "Mikologiya va algologiya laboratoriyasi",
+    },
+  ];
+  
+  // Data for bottom navigation
+  const bottomNavLinks = [
+    { text: "Bosh sahifa", href: null },
+    { text: "Biz haqimizda", href: "https://botany.uz/uz/about/" },
+    { text: "Aloqa", href: "https://botany.uz/uz/contacts/" },
+  ];
+
+  
   return (
     <footer className="footer">
       <div className="footer__container">

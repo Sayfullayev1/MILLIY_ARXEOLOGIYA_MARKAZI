@@ -150,7 +150,7 @@ export default function News() {
                         </Link>
                     </div>
 
-                    <p className='home-page__news__item__data'> <i class="fa-regular fa-calendar-days"></i>  {item.data}</p>
+                    <p className='home-page__news__item__data'> <i className="fa-regular fa-calendar-days"></i>  {item.data}</p>
                     
                     <Link className='home-page__news__item__link' to={item.link}>
                         <h1 className='home-page__news__item__title'>{item.title[language]}</h1>

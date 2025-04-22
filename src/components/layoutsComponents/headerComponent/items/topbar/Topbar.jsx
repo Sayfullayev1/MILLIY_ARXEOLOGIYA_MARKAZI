@@ -1,4 +1,4 @@
-import React, { use, useContext, useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import "./topbar.scss"
 
 import { LanguageContext } from '../../../../../context/LanguageContext';
@@ -33,20 +33,20 @@ export default function Topbar() {
         const pathParts = location.pathname.split("/");
       
         // Если в пути есть язык, заменяем его
-        if (lang === "uz") {
-          // Если выбран узбекский, удаляем его из URL, если он есть
-          if (pathParts[1]?.match(/^[a-z]{2}$/)) {
-            pathParts.splice(1, 1); // Удаляем первый элемент (язык)
-          }
-        } else {
-          // Если язык уже есть, заменяем его
+        // if (lang === "uz") {
+        //   // Если выбран узбекский, удаляем его из URL, если он есть
+        //   if (pathParts[1]?.match(/^[a-z]{2}$/)) {
+        //     pathParts.splice(1, 1); // Удаляем первый элемент (язык)
+        //   }
+        // } else {
+        //   // Если язык уже есть, заменяем его
           if (pathParts[1]?.match(/^[a-z]{2}$/)) {
             pathParts[1] = lang;
           } else {
             // Если языка нет, добавляем его
             pathParts.splice(1, 0, lang);
           }
-        }
+        // }
       
         const newPath = pathParts.join("/");
         navigate(newPath);
@@ -79,7 +79,7 @@ export default function Topbar() {
 
         <div className='header__topbar__socials'>
             <p className='header__topbar__socials__text'>
-            <i class="fa fa-home"></i>  {locationText}
+            <i className="fa fa-home"></i>  {locationText}
             </p>
         </div>
 

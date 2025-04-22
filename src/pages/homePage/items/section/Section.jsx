@@ -24,7 +24,7 @@ export default function Section() {
 
     const data = [
         {
-            icon: <i class="fa-brands fa-envira"></i>,
+            icon: <i className="fa-brands fa-envira"></i>,
             number: 10000,
             label: {
                 uz: "GERBARIY KOLLEKSIYASI",
@@ -33,7 +33,7 @@ export default function Section() {
             },
         },
         {
-            icon: <i class="fa fa-users"></i>,
+            icon: <i className="fa fa-users"></i>,
             number: 41,
             label: {
                 uz: "ILMIY XODIMLAR",
@@ -42,7 +42,7 @@ export default function Section() {
             },
         },
         {
-            icon: <i class="fa-solid fa-signal"></i>,
+            icon: <i className="fa-solid fa-signal"></i>,
             number: 15,
             label: {
                 uz: "AKTIV LOYIHALAR",
@@ -51,7 +51,7 @@ export default function Section() {
             },
         },
         {
-            icon: <i class="fa-solid fa-pen-to-square"></i>,
+            icon: <i className="fa-solid fa-pen-to-square"></i>,
             number: 700,
             label: {
                 uz: "ILMIY MAQOLALAR",

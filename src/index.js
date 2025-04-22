@@ -7,6 +7,7 @@ import DashboardLayout from './layouts/dashboardLayout/DashboardLayout';
 import { LanguageProvider } from './context/LanguageContext';
 
 import HomePage from './pages/homePage/HomePage';
+import ContactsPage from './pages/contactsPage/ContactsPage';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -20,6 +21,8 @@ root.render(
           <Route element={<DashboardLayout />}>
 
             <Route path="/:lang?" element={<HomePage />} />
+
+            <Route path="/:lang?/aloqa" element={<ContactsPage />} />
 
           </Route>
 

@@ -39,36 +39,79 @@ export default function NavbarComponent() {
       },
       {
         Name: {
-          uz: "Tuzilma",
-          ru: "Структура",
-          en: "Structure",
+          uz: "BIZ TO'G'RIMIZDA",
+          ru: "О нас",
+          en: "About us",
         },
-        link: "/tuzilma",
+        link: "",
         items: [
           {
             Name: {
-              uz: "Biz haqimizda",
-              ru: "О нас",
-              en: "About us",
+              uz: "Markaz tarixi",
+              ru: "История центра",
+              en: "History of the center",
             },
-            link: "/tuzilma/biz-haqimizda",
+            link: "/tuzilma/markaz-tarixi",
           },
           {
             Name: {
-              uz: "Rahbariyat",
-              ru: "Руководство",
-              en: "Management",
+              uz: "Bo'limlar va Laboratoriyalar",
+              ru: "Отделы и лаборатории",
+              en: "Departments and laboratories",
             },
-            link: "/tuzilma/rahbariyat",
+            link: "",
+
+            extendedItems: [
+              {
+                Name: {
+                  uz: "",
+                  ru: "Bioarxeologiya laboratoriyasi",
+                  en: "Laboratory of bioarchaeology",
+                },
+                link: "/tuzilma/arxeologiya-bo'limi",
+              },
+              {
+                Name: {
+                  uz: "Arxeologik tadqiqotlar laboratoriyasi",
+                  ru: "Лаборатория археологических исследований",
+                  en: "Laboratory of archaeological research",
+                },
+                link: "/tuzilma/arxeologik-tadqiqotlar-laboratoriyasi",
+              },
+            ],
           },
           {
             Name: {
-              uz: "Institutt Tuzulmasi",
-              ru: "Структура института",
-              en: "Institute structure",
+              uz: "Markaz ustavi",
+              ru: "Устав центра",
+              en: "Center charter",
             },
-            link: "/tuzilma/kafedralar",
+            link: "/tuzilma/markaz-ustavi",
           },
+          {
+            Name: {
+              uz: "Markaz academiklari",
+              ru: "Академики центра",
+              en: "Academics of the center",
+            },
+            link: "/tuzilma/markaz-academiklari",
+          },
+          {
+            Name: {
+              uz: "Doktorantura",
+              ru: "Аспирантура",
+              en: "Postgraduate",
+            },
+            link: "/tuzilma/doktorantura",
+          },
+          {
+            Name: {
+              uz: "Xodimlar",
+              ru: "Сотрудники",
+              en: "Employees",
+            },
+            link: "/tuzilma/xodimlar",
+            },
         ],
         
       },
@@ -154,6 +197,7 @@ export default function NavbarComponent() {
                               <Link className='navbar__submenu__link' to={`/${language}${subItem.link}`}>
                                 {subItem.Name[language]}
                               </Link>
+
                             </li>
                           ))
                         }

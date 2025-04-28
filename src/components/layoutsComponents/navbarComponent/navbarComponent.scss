@@ -83,7 +83,9 @@
           color: #333333;
           text-transform: uppercase;
           text-decoration: none;
-          // white-space: nowrap; // Добавлено свойство для предотвращения переноса текста
+          white-space: nowrap; // Предотвращаем перенос текста
+          overflow: hidden; // Обрезаем текст, если он слишком длинный
+          text-overflow: ellipsis; // Добавляем многоточие, если текст обрезан
         }
       }
 

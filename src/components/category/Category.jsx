@@ -4,27 +4,27 @@ import './category.scss';
 import { LanguageContext } from '../../context/LanguageContext';
 import { Link } from 'react-router-dom';
 
-export default function Category() {
+export default function Category({ data }) {
   const { language } = useContext(LanguageContext); // Получаем язык из контекста
 
-  const data = [
-    {
-      text: {
-        uz: "Bosh sahifa",
-        ru: "Главная",
-        en: "Main",
-      },
-      link: "/",
-    },
-    {
-      text: {
-        uz: "Aloqa",
-        ru: "Контакты",
-        en: "Contacts",
-      },
-      link: "/",
-    },
-  ];
+//   const data = [
+//     {
+//       text: {
+//         uz: "Bosh sahifa",
+//         ru: "Главная",
+//         en: "Main",
+//       },
+//       link: "/",
+//     },
+//     {
+//       text: {
+//         uz: "Aloqa",
+//         ru: "Контакты",
+//         en: "Contacts",
+//       },
+//       link: "/",
+//     },
+//   ];
 
   return (
     <div className="category">

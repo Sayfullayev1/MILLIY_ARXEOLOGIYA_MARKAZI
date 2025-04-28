@@ -7,11 +7,32 @@ import Category from '../../../../components/category/Category'
 
 
 export default function Main() {
+
+  const menuData = [
+    {
+      text: {
+        uz: "Bosh sahifa",
+        ru: "Главная",
+        en: "Main",
+      },
+      link: "/",
+    },
+    {
+      text: {
+        uz: "Aloqa",
+        ru: "Контакты",
+        en: "Contacts",
+      },
+      link: "/",
+    },
+  ];
+
+
   return (
     <main className='contacts-page__main'>
         
 
-        <Category/>
+        <Category data={menuData}/>
 
 
         <Card/>

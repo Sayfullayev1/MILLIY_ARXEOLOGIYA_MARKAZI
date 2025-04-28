@@ -8,6 +8,7 @@ import { LanguageProvider } from './context/LanguageContext';
 
 import HomePage from './pages/homePage/HomePage';
 import ContactsPage from './pages/contactsPage/ContactsPage';
+import HistoryOfTheCenterPage from './pages/historyOfTheCenterPage/HistoryOfTheCenterPage';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -24,6 +25,7 @@ root.render(
 
             <Route path="/:lang?/aloqa" element={<ContactsPage />} />
 
+            <Route path="/:lang?/markaz-tarixi" element={<HistoryOfTheCenterPage />} />
           </Route>
 
         </Routes>

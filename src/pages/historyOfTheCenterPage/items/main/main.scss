@@ -1,0 +1,42 @@
+.history-of-the-center-page__main{
+  font-family: "Roboto", sans-serif;
+
+  
+  &__section{
+
+    width: 100%;
+    padding: 50px 3%;
+
+    &__title{
+      font-size: 24px;
+      font-weight: 700;
+      color: #000000;
+      margin-bottom: 20px;
+      text-align: center;
+
+    }
+
+
+    &__image{
+      width: 180px;
+      overflow-clip-margin: content-box;
+      overflow: clip;
+      float: left;
+      margin: 0 20px 20px 0;
+    }
+
+    &__content{
+      font-size: 12px;
+      font-weight: 400;
+      color: #000000;
+      text-align: justify;
+      box-sizing: border-box;
+    }
+  }
+}
+
+
+
+.history-section__image{
+  width: 200px;
+}

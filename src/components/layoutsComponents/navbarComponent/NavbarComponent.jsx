@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState, useRef } from 'react';
 import { useNavigate, useLocation, Link } from 'react-router-dom';
 import './navbarComponent.scss';
 import { LanguageContext } from '../../../context/LanguageContext';
@@ -10,8 +10,7 @@ export default function NavbarComponent() {
   const { language } = useContext(LanguageContext);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
-
-  
+  const [openSubmenuIndex, setOpenSubmenuIndex] = useState(null); // Состояние для управления открытием подменю
 
   useEffect(() => {
     if (location.pathname === '/') {
@@ -51,7 +50,7 @@ export default function NavbarComponent() {
               ru: "История центра",
               en: "History of the center",
             },
-            link: "/tuzilma/markaz-tarixi",
+            link: "/markaz-tarixi",
           },
           {
             Name: {
@@ -68,7 +67,7 @@ export default function NavbarComponent() {
                   ru: "Bioarxeologiya laboratoriyasi",
                   en: "Laboratory of bioarchaeology",
                 },
-                link: "/tuzilma/arxeologiya-bo'limi",
+                link: "arxeologiya-bo'limi",
               },
               {
                 Name: {
@@ -76,7 +75,7 @@ export default function NavbarComponent() {
                   ru: "Лаборатория археологических исследований",
                   en: "Laboratory of archaeological research",
                 },
-                link: "/tuzilma/arxeologik-tadqiqotlar-laboratoriyasi",
+                link: "arxeologik-tadqiqotlar-laboratoriyasi",
               },
             ],
           },
@@ -86,7 +85,7 @@ export default function NavbarComponent() {
               ru: "Устав центра",
               en: "Center charter",
             },
-            link: "/tuzilma/markaz-ustavi",
+            link: "/markaz-ustavi",
           },
           {
             Name: {
@@ -94,7 +93,7 @@ export default function NavbarComponent() {
               ru: "Академики центра",
               en: "Academics of the center",
             },
-            link: "/tuzilma/markaz-academiklari",
+            link: "/markaz-academiklari",
           },
           {
             Name: {
@@ -102,7 +101,7 @@ export default function NavbarComponent() {
               ru: "Аспирантура",
               en: "Postgraduate",
             },
-            link: "/tuzilma/doktorantura",
+            link: "/doktorantura",
           },
           {
             Name: {
@@ -110,7 +109,7 @@ export default function NavbarComponent() {
               ru: "Сотрудники",
               en: "Employees",
             },
-            link: "/tuzilma/xodimlar",
+            link: "/xodimlar",
             },
         ],
         
@@ -174,6 +173,24 @@ export default function NavbarComponent() {
     ]
 
 
+    
+    // submenus.forEach((submenu) => {
+    //   submenu.style.display = 'none'; 
+    // });
+
+    // useEffect(() => {
+    //   const submenus = document.querySelectorAll('.navbar__submenu');
+    //   submenus.forEach((submenu) => {
+    //     // submenu.style.display = 'none'; // Hide all submenus initially
+
+    //   });
+    // }, []);
+
+    const handleSubmenuClick = (index) => {
+      setOpenSubmenuIndex((prevIndex) => (prevIndex === index ? null : index)); // Переключаем состояние
+    };
+    
+
 
   return (
     <nav className="navbar">
@@ -185,22 +202,36 @@ export default function NavbarComponent() {
             {
               data?.map((item, index) => {
                 return (
-                  <li className='navbar__item' key={index}>
-                    <Link className='navbar__item__link' to={`/${language}${item.link}`}>
+                  <li
+                    className={`navbar__item ${openSubmenuIndex === index ? 'navbar__item--open' : ''}`}
+                    key={index}
+                    onMouseEnter={() => setOpenSubmenuIndex(index)} // Для hover
+                    onMouseLeave={() => setOpenSubmenuIndex(null)} // Закрытие при уходе мыши
+                  >
+                    <Link
+                      className='navbar__item__link'
+                      to={`/${language}${item.link}`}
+                      onClick={(e) => {
+                        if (item.items && item.items.length > 0) {
+                          e.preventDefault(); // Предотвращаем переход только если есть подменю
+                          handleSubmenuClick(index); // Для клика
+                        }
+                      }}
+                    >
                       {item.Name[language]}
                     </Link>
-                    {item.items && item.items.length > 0 && ( 
-                      <ul className='navbar__submenu'>
-                        {
-                          item.items.map((subItem, subIndex) => (
-                            <li className='navbar__submenu__item' key={subIndex}>
-                              <Link className='navbar__submenu__link' to={`/${language}${subItem.link}`}>
-                                {subItem.Name[language]}
-                              </Link>
-
-                            </li>
-                          ))
-                        }
+                    {item.items && item.items.length > 0 && (
+                      <ul className={`navbar__submenu ${openSubmenuIndex === index ? 'navbar__submenu--visible' : ''}`}>
+                        {item.items.map((subItem, subIndex) => (
+                          <li className='navbar__submenu__item' key={subIndex}>
+                            <Link
+                              className='navbar__submenu__link'
+                              to={`/${language}${subItem.link}`}
+                            >
+                              {subItem.Name[language]}
+                            </Link>
+                          </li>
+                        ))}
                       </ul>
                     )}
                   </li>

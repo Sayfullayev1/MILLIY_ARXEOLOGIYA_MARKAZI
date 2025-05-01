@@ -10,6 +10,10 @@ import HomePage from './pages/homePage/HomePage';
 import ContactsPage from './pages/contactsPage/ContactsPage';
 import HistoryOfTheCenterPage from './pages/historyOfTheCenterPage/HistoryOfTheCenterPage';
 
+
+import BioarchaeologyLaboratoryPage from './pages/departmentsAndLaboratoriesPages/bioarchaeology-laboratoryPage/BioarchaeologyLaboratoryPage';
+import InterdisciplinaryResearchPage from './pages/departmentsAndLaboratoriesPages/interdisciplinary-researchPage/InterdisciplinaryResearchPage';
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   //<React.StrictMode>
@@ -26,6 +30,11 @@ root.render(
             <Route path="/:lang?/aloqa" element={<ContactsPage />} />
 
             <Route path="/:lang?/markaz-tarixi" element={<HistoryOfTheCenterPage />} />
+          
+            <Route  path="/:lang?/bioarchaeology-laboratory" element={<BioarchaeologyLaboratoryPage />} />
+          
+            <Route path='/:lang?/interdisciplinary-research' element={<InterdisciplinaryResearchPage/>} />
+
           </Route>
 
         </Routes>

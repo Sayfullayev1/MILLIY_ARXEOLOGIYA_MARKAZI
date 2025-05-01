@@ -23,7 +23,7 @@
             &__link {
                 text-decoration: none;
                 color: white;
-                font-size: 16px;
+                font-size: 14px;
                 font-weight: 200;
 
                 &:hover {
@@ -34,7 +34,7 @@
             &__arrowWrapper {
                 color: white;
                 margin: 0 10px;
-                font-size: 13px;
+                font-size: 10px;
                 font-weight: 800;
 
                 &:last-child {
@@ -43,7 +43,7 @@
             }
 
             &__text {
-                font-size: 16px;
+                font-size: 14px;
                 font-weight: 500;
                 color: #009cff;
             }
@@ -51,19 +51,7 @@
     }
 }
 
-// h2 {
-//     font-size: 26px; /* Ваш размер шрифта */
-//     margin: 0; /* Убираем отступы */
-//     font-weight: 600; /* Ваш вес шрифта */
-//     color: #461818; /* Ваш цвет текста */
-// }
 
-.category__title {
-    font-size: 32px; /* Ваш размер шрифта */
-    margin: 0; /* Убираем отступы */
-    font-weight: 600; /* Ваш вес шрифта */
-    color: #fff; /* Ваш цвет текста */
-}
 
 @media (min-width: 780px) {
     .category {

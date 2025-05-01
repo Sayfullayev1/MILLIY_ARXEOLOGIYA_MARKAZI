@@ -51,6 +51,8 @@ export default function NavbarComponent() {
               en: "History of the center",
             },
             link: "/markaz-tarixi",
+
+            extendedItems: ""
           },
           {
             Name: {
@@ -63,20 +65,36 @@ export default function NavbarComponent() {
             extendedItems: [
               {
                 Name: {
-                  uz: "",
-                  ru: "Bioarxeologiya laboratoriyasi",
-                  en: "Laboratory of bioarchaeology",
+                  uz: "Bioarxeologiya laboratoriyasi",
+                  ru: "Лаборатория биотехнологии",
+                  en: "Bioarchaeology Laboratory",
                 },
-                link: "arxeologiya-bo'limi",
+                link: "/bioarchaeology-laboratory",
               },
               {
                 Name: {
-                  uz: "Arxeologik tadqiqotlar laboratoriyasi",
-                  ru: "Лаборатория археологических исследований",
-                  en: "Laboratory of archaeological research",
+                  uz: "Fanlararo tadqiqotlar bo'limi",
+                  ru: "Междисциплинарный отдел",
+                  en: "Interdisciplinary Research Department",
                 },
-                link: "arxeologik-tadqiqotlar-laboratoriyasi",
+                link: "/interdisciplinary-research",
               },
+              {
+                Name: {
+                  uz: "Ipak yo'li arxeologiya bo'limi",
+                  ru: "Отдел археологии Шёлкового пути",
+                  en: "Silk Road Archaeology Department",
+                },
+                link: "/silk-road-archaeology",
+              },
+              {
+                Name: {
+                  uz: "Lanshaft arxeologiyasi laboratoriyasi",
+                  ru: "Лаборатория ландшафтной археологии",
+                  en: "Landscape Archaeology Laboratory",
+                },
+                link: "/landscape-archaeology",
+              }
             ],
           },
           {
@@ -86,6 +104,8 @@ export default function NavbarComponent() {
               en: "Center charter",
             },
             link: "/markaz-ustavi",
+
+            extendedItems: ""
           },
           {
             Name: {
@@ -94,6 +114,8 @@ export default function NavbarComponent() {
               en: "Academics of the center",
             },
             link: "/markaz-academiklari",
+
+            extendedItems: ""
           },
           {
             Name: {
@@ -102,6 +124,8 @@ export default function NavbarComponent() {
               en: "Postgraduate",
             },
             link: "/doktorantura",
+
+            extendedItems: ""
           },
           {
             Name: {
@@ -110,9 +134,9 @@ export default function NavbarComponent() {
               en: "Employees",
             },
             link: "/xodimlar",
-            },
+            extendedItems: ""
+          },
         ],
-        
       },
       {
         Name: {
@@ -190,7 +214,8 @@ export default function NavbarComponent() {
       setOpenSubmenuIndex((prevIndex) => (prevIndex === index ? null : index)); // Переключаем состояние
     };
     
-
+    // console.log(data[1].items[1].extendedItems);
+    
 
   return (
     <nav className="navbar">
@@ -220,18 +245,50 @@ export default function NavbarComponent() {
                     >
                       {item.Name[language]}
                     </Link>
+                    
                     {item.items && item.items.length > 0 && (
                       <ul className={`navbar__submenu ${openSubmenuIndex === index ? 'navbar__submenu--visible' : ''}`}>
-                        {item.items.map((subItem, subIndex) => (
-                          <li className='navbar__submenu__item' key={subIndex}>
-                            <Link
-                              className='navbar__submenu__link'
-                              to={`/${language}${subItem.link}`}
-                            >
-                              {subItem.Name[language]}
-                            </Link>
-                          </li>
-                        ))}
+                        {item.items.map((subItem, subIndex) => {
+
+                          return(
+                            <li className={`navbar__submenu__item ${subItem.extendedItems.length > 0 ? "navbar__submenu__extended-item" : ""}`} key={subIndex}>
+                              <Link
+                                className='navbar__submenu__link'
+                                to={`/${language}${subItem.link}`}
+                              >
+                                {subItem.Name[language]}
+                              </Link>
+
+                              {subItem.extendedItems && subItem.extendedItems.length > 0 && (
+                                <div className='navbar__submenu__extended-item__arrow'>
+                                  <i className="fa-solid fa-angle-right"></i>
+                                </div>
+                              )}
+                            
+                              {subItem.extendedItems && subItem.extendedItems.length > 0 && (
+                                <ul className='navbar__extendedItem__list'>
+                                  {
+                                    subItem.extendedItems.map((extendedItem, extendedItemIndex) => {
+                                      return(
+                                        <li className='navbar__extendedItem__item' key={extendedItemIndex}>
+                                          <Link className='navbar__extendedItem__link' to={`/${language}${extendedItem.link}`}>
+                                            {extendedItem.Name[language]}
+                                          </Link>
+                                        </li>
+                                      )
+                                    })
+                                  }
+                                </ul>
+                              )}
+
+                            </li>
+
+                          )
+
+                             
+                        })}
+                            
+
                       </ul>
                     )}
                   </li>

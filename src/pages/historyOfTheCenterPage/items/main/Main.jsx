@@ -27,6 +27,7 @@ export default function Main() {
     },
   ];
 
+
   return (
     <main className="history-of-the-center-page__main">
       <Category data={menuData} />

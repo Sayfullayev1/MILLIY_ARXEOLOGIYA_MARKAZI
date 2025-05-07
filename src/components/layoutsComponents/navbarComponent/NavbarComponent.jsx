@@ -85,7 +85,7 @@ export default function NavbarComponent() {
                   ru: "Отдел археологии Шёлкового пути",
                   en: "Silk Road Archaeology Department",
                 },
-                link: "/silk-road-archaeology",
+                link: "/silk-road-archeology-department",
               },
               {
                 Name: {
@@ -93,7 +93,7 @@ export default function NavbarComponent() {
                   ru: "Лаборатория ландшафтной археологии",
                   en: "Landscape Archaeology Laboratory",
                 },
-                link: "/landscape-archaeology",
+                link: "/landscape-archeology-laboratoryy",
               }
             ],
           },

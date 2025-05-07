@@ -1,9 +1,9 @@
 import React, { useContext } from 'react'
 import "./interdisciplinaryResearchPage.scss"
-import { LanguageContext } from '../../../context/LanguageContext';
+import { LanguageContext } from '../../../../context/LanguageContext';
 
 
-import Category from '../../../components/category/Category';
+import Category from '../../../../components/category/Category';
 import { Link } from 'react-router-dom';
 
 

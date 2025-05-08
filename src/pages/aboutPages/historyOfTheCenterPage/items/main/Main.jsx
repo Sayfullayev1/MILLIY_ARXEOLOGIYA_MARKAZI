@@ -31,7 +31,10 @@ export default function Main() {
 
   return (
     <main className="history-of-the-center-page__main">
+
+      
       <Category data={menuData} />
+
 
       <section className="history-of-the-center-page__main__section">
         <h1 className="history-of-the-center-page__main__section__title">Milliy Arxeologiya markazi tarixi</h1>
@@ -112,6 +115,8 @@ export default function Main() {
             </h2>
         </div>
       </section>
+
+
     </main>
   );
 }

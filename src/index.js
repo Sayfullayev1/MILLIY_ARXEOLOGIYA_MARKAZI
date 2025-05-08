@@ -22,10 +22,19 @@ import HistoryOfTheCenterPage from './pages/aboutPages/historyOfTheCenterPage/Hi
     import SilkRoadArcheologyDepartmentPage from './pages/aboutPages/departmentsAndLaboratoriesPages/silk-road-archeology-departmentPage/SilkRoadArcheologyDepartmentPage';
     import LandscapeArcheologyLaboratoryPage from './pages/aboutPages/departmentsAndLaboratoriesPages/landscape-archeology-laboratoryPage/LandscapeArcheologyLaboratoryPage';
 
+    
+import Management from './pages/aboutPages/management/Management';
+import CharterOfTheCenterPage from './pages/aboutPages/charterOfTheCenterPage/CharterOfTheCenterPage';
+import AcademicsOfTheCenterPage from './pages/aboutPages/academicsOfTheCenterPage/AcademicsOfTheCenterPage';
+
+
 
 
 /* Contacts Page*/ 
 import ContactsPage from './pages/contactsPage/ContactsPage';
+
+
+
 
 
 
@@ -65,6 +74,15 @@ root.render(
               <Route path='/:lang?/silk-road-archeology-department' element={<SilkRoadArcheologyDepartmentPage />} />
               
               <Route path='/:lang?/landscape-archeology-laboratory' element={<LandscapeArcheologyLaboratoryPage />} />
+
+
+
+            <Route path='/:lang?/charter-of-the-center' element={<CharterOfTheCenterPage />} />
+
+
+            <Route path='/:lang?/academics-of-the-center' element={<AcademicsOfTheCenterPage />} />
+
+            <Route path='/:lang?/management' element={<Management />} />
 
 
             {/* Contacts Page */}

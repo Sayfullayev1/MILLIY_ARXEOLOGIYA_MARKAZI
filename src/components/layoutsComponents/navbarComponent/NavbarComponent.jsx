@@ -99,11 +99,20 @@ export default function NavbarComponent() {
           },
           {
             Name: {
+              uz: "Rahbariyat",
+              ru: "Руководство",
+              en: "Management",
+            },
+            link: "/management",
+            extendedItems: ""
+          },
+          {
+            Name: {
               uz: "Markaz ustavi",
               ru: "Устав центра",
-              en: "Center charter",
+              en: "Charter of the center",
             },
-            link: "/markaz-ustavi",
+            link: "/charter-of-the-center",
 
             extendedItems: ""
           },
@@ -113,27 +122,8 @@ export default function NavbarComponent() {
               ru: "Академики центра",
               en: "Academics of the center",
             },
-            link: "/markaz-academiklari",
+            link: "/academics-of-the-center",
 
-            extendedItems: ""
-          },
-          {
-            Name: {
-              uz: "Doktorantura",
-              ru: "Аспирантура",
-              en: "Postgraduate",
-            },
-            link: "/doktorantura",
-
-            extendedItems: ""
-          },
-          {
-            Name: {
-              uz: "Xodimlar",
-              ru: "Сотрудники",
-              en: "Employees",
-            },
-            link: "/xodimlar",
             extendedItems: ""
           },
         ],

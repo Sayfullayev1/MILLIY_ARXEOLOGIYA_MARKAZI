@@ -37,6 +37,15 @@ import ContactsPage from './pages/contactsPage/ContactsPage';
 
 
 
+/* Publications Page*/
+
+import NewsPage from './pages/newsPages/newsPage/NewsPage';
+import NewsDetailPage from './pages/newsPages/newsDetailPage/NewsDetailPage';
+
+
+
+
+
 
 
 
@@ -63,7 +72,7 @@ root.render(
             {/* About Pages*/}
 
             <Route path="/:lang?/markaz-tarixi" element={<HistoryOfTheCenterPage />} />
-          
+
 
               {/* Departments and Laboratories Pages*/}
 
@@ -91,7 +100,20 @@ root.render(
 
 
 
+              {/* News Page */}
+
+              <Route path="/:lang?/news" element={<NewsPage />} />
+
+
+              <Route path="/:lang?/news/:id" element={<NewsDetailPage />} />
+
+
+
           </Route>
+
+
+
+          
 
         </Routes>
 

@@ -1,0 +1,32 @@
+import React from 'react';
+import './main.scss';
+import Category from '../../../../../components/category/Category';
+import Section from '../section/Section';
+
+export default function Main() {
+  const menuData = [
+    {
+      text: {
+        uz: "Bosh sahifa",
+        ru: "Главная",
+        en: "Main",
+      },
+      link: "/",
+    },
+    {
+      text: {
+        uz: "Yangiliklar",
+        ru: "Новости",
+        en: "News",
+      },
+      link: "/news",
+    },
+  ];
+
+  return (
+    <main className="contacts-page__main">
+      <Category data={menuData} />
+      <Section />
+    </main>
+  );
+}

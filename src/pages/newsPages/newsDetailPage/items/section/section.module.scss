@@ -1,0 +1,152 @@
+.container {
+  padding: 20px 10px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.contentWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.imgWrapper {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+
+  & > img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+}
+
+.textWrapper {
+  flex: 1;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.description {
+  font-size: 16px;
+  font-weight: 400;
+  color: #555;
+  text-align: justify;
+  line-height: 1.6;
+}
+
+
+
+
+.cardListWrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  padding: 30px;
+
+
+  &> hr{
+    display: none;
+  }
+}
+
+.card {
+  border-radius: 8px;
+
+    
+    &> hr{
+      display: none;
+    }
+}
+
+.cardImage {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  background-color: #f0f0f0;
+}
+
+.cardContent {
+  padding: 5px 0 20px 0;
+}
+
+.cardTitle {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.cardDescription {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.cardDate {
+  font-size: 0.9rem;
+  color: #888;
+  margin-bottom: 10px;
+}
+
+.cardLink {
+  font-size: 0.9rem;
+  color: #007bff;
+  text-decoration: none;
+  border: 1px solid #007bff;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: #007bff;
+    color: #fff;
+  }
+}
+
+
+
+@media (min-width: 800px) {
+  .container {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+  }
+
+  .imgWrapper {
+    width: 100%;
+  }
+
+  .cardListWrapper {
+    padding: 0;
+    width: 30%;
+    grid-template-columns: 1fr;
+
+  }
+
+  .card{
+    
+    &> hr{
+      display: block;
+    }
+  }
+
+  .contentWrapper {
+    width: 65%;
+  }
+}
+
+@media (min-width: 1300px) {
+  .container {
+    max-width: 1300px;
+    padding: 40px 4%;
+    margin: 0 auto;
+  }
+}

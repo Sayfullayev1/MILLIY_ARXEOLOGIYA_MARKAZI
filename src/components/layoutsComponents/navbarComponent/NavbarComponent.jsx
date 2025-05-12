@@ -171,8 +171,39 @@ export default function NavbarComponent() {
           en: "News",
         },
 
-        link: "/yangiliklar",
-        items: "",
+        link: "",
+        items: [
+          {
+            Name: {
+              uz: "Yangiliklar",
+              ru: "Новости",
+              en: "News",
+            },
+            link: "/news",
+
+            extendedItems: ""
+          },
+          {
+            Name: {
+              uz: "E'lonlar",
+              ru: "Обьявления",
+              en: "Ads",
+            },
+            link: "/ads",
+
+            extendedItems: "",
+          },
+          {
+            Name: {
+              uz: "Tadbirlar",
+              ru: "События",
+              en: "Events",
+            },
+            link: "/events",
+
+            extendedItems: ""
+          },
+        ],
       },
       {
         Name: {
@@ -187,24 +218,11 @@ export default function NavbarComponent() {
     ]
 
 
-    
-    // submenus.forEach((submenu) => {
-    //   submenu.style.display = 'none'; 
-    // });
-
-    // useEffect(() => {
-    //   const submenus = document.querySelectorAll('.navbar__submenu');
-    //   submenus.forEach((submenu) => {
-    //     // submenu.style.display = 'none'; // Hide all submenus initially
-
-    //   });
-    // }, []);
 
     const handleSubmenuClick = (index) => {
       setOpenSubmenuIndex((prevIndex) => (prevIndex === index ? null : index)); // Переключаем состояние
     };
     
-    // console.log(data[1].items[1].extendedItems);
     
 
   return (

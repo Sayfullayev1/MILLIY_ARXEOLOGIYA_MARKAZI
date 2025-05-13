@@ -1,7 +1,10 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import styles from './section.module.scss'; // Убедитесь, что файл section.module.scss существует
 import { LanguageContext } from '../../../../../context/LanguageContext';
 import { Link } from 'react-router-dom';
+
+import axios from 'axios';
+
 
 const newsData = [
   {
@@ -88,20 +91,40 @@ const newsData = [
 
 export default function Section() {
   const { language } = useContext(LanguageContext);
+  const [newsListData, setNewsListData] = React.useState([]);
+
+
+
+  const API_BASE_URL = 'https://milliy-arxeologiya-markazi-admin-api.onrender.com';
+
+  // const API_BASE_URL = 'http://localhost:3221'; // Для локального тестирования
+  
+  useEffect(() => {
+    axios.get(`${API_BASE_URL}/api/newsData/all`)
+      .then((response) => {
+        console.log('Ответ сервера:', response.data.data);
+        setNewsListData(response.data.data);
+      })
+      .catch((error) => {
+        console.error('Ошибка при получении данных:', error);
+      });
+  }, []);
+
 
   return (
     <section className={styles.container}>
       
       <div className={styles.grid}>
-        {newsData.map((news) => (
+        {newsListData?.map((news) => (
           <div key={news.id} className={styles.card}>
-            <img src={news.image} alt={news.title} className={styles.cardImage} />
+            <img src={news.image} alt={news.title[language]} className={styles.cardImage} />
             <div className={styles.cardContent}>
-              <h2 className={styles.cardTitle}>{news.title}</h2>
-              <p className={styles.cardDate}>{new Date(news.date).toLocaleDateString()}</p>
-              <p className={styles.cardDescription}>{news.description}</p>
-              <Link to={`/${language}${news.link}`} className={styles.cardButton}>
+              <h2 className={styles.cardTitle}>{news.title[language]}</h2>
+              <p className={styles.cardDate}>{news.date}</p>
+              <p className={styles.cardDescription}>{news.description[language]}</p>
+              <Link to={`/${language}/news/${news.slug}`} className={styles.cardButton}>
                 {language === 'uz' ? 'Batafsil' : language === 'ru' ? 'Подробнее' : 'Read more'}
+                <i class="fa-solid fa-arrow-right" style={{ marginLeft: '5px' }}></i>
               </Link>
             </div>
           </div>

@@ -52,11 +52,11 @@ export default function Section(Data) {
   return (
     <section className={styles.container}>
       <div className={styles.contentWrapper}>
-        <h2 className={styles.title}>{newsData.title}</h2>
         <div className={styles.imgWrapper}>
           <img className={styles.big_image} src={newsData.image} alt={newsData.title} />
         </div>
         <div className={styles.textWrapper}>
+          <h2 className={styles.title}>{newsData.title}</h2>
           <p className={styles.description}>{newsData.description}</p>
         </div>
       </div>

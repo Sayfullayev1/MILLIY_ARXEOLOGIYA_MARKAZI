@@ -1,7 +1,10 @@
 import React from 'react';
 import './main.scss';
+
 import Category from '../../../../../components/category/Category';
 import Section from '../section/Section';
+
+import { LanguageContext } from '../../../../../context/LanguageContext';
 
 export default function Main() {
   
@@ -55,7 +58,10 @@ export default function Main() {
         link: '/news/6',
       },
     ];
+  
+    
 
+  const { language } = React.useContext(LanguageContext);
 
   const menuData = [
     {
@@ -72,7 +78,7 @@ export default function Main() {
         ru: "Новости",
         en: "News",
       },
-      link: "/news",
+      link: `/${language}/news`,
     },
     {
       text: {

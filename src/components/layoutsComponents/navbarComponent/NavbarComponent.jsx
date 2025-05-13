@@ -130,16 +130,101 @@ export default function NavbarComponent() {
       },
       {
         Name: {
-          uz: "ILMIY FAOLIYAT",
-          ru: "Научная деятельность",
-          en: "Scientific activity",
+          uz: "Nashrlar",
+          ru: "Публикации",
+          en: "Publications",
 
           items: {
             
           },
         },
-        link: "/ilmiy-faoliyat",
-        items: "",
+        link: "/loyihalar",
+        items: [
+          {
+            Name: {
+              uz: "Maqolalar",
+              ru: "Статьи",
+              en: "Articles",
+            },
+            link: "/articles",
+
+            extendedItems: ""
+          },
+          {
+            Name: {
+              uz: "Monografiyalar",
+              ru: "Монографии",
+              en: "Monographs",
+            },
+            link: "/monographs",
+
+            extendedItems: ""
+          },
+          {
+            Name: {
+              uz: "O'quv qo'llanmalar",
+              ru: "Учебные пособия",
+              en: "Tutorials",
+            },
+            link: "/tutorials",
+
+            extendedItems: ""
+          },
+          {
+            Name: {
+              uz: "O'zbekiston moddiy madaniyati tarixi",
+              ru: "История материальной культуры Узбекистана",
+              en: "History of material culture of Uzbekistan",
+            },
+            link: "/uzbekistan-history-of-material-culture",
+
+            extendedItems: ""
+          },
+        ],
+      },
+      {
+        Name: {
+          uz: "Faoliyat",
+          ru: "Деятельность",
+          en: "Activity",
+
+          items: {
+
+          },
+        },
+        link: "",
+        items: [
+            {
+              Name: {
+                uz: "Eng muhim ilmiy kashfiyotlar",
+                ru: "Важнейшие результаты исследований",
+                en: "The most important research results",
+              },
+              link: "/important-research-results",
+
+              extendedItems: ""
+            },
+            {
+              Name: {
+                uz: "Ilim-fan chora-tadbirlar rejasi",
+                ru: "План действий по науке",
+                en: "Science Action Plan",
+              },
+              link: "/science-action-plan",
+
+              extendedItems: ""
+            },
+            {
+              Name: {
+                uz: "Yosh olimlar kengashi",
+                ru: "Совет молодых ученых",
+                en: "Board of young scientists",
+              },
+              link: "/board-of-young-scientists",
+
+              extendedItems: ""
+            },
+          ]
       },
       {
         Name: {

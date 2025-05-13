@@ -30,6 +30,14 @@ import AcademicsOfTheCenterPage from './pages/aboutPages/academicsOfTheCenterPag
 
 
 
+
+/* Publications Page*/
+
+import UzbekistanHistoryOfMaterialCulturePage from './pages/publicationsPages/uzbekistanHistoryOfMaterialCulturePage/UzbekistanHistoryOfMaterialCulturePage';
+
+
+
+
 /* Contacts Page*/ 
 import ContactsPage from './pages/contactsPage/ContactsPage';
 
@@ -41,6 +49,7 @@ import ContactsPage from './pages/contactsPage/ContactsPage';
 
 import NewsPage from './pages/newsPages/newsPage/NewsPage';
 import NewsDetailPage from './pages/newsPages/newsDetailPage/NewsDetailPage';
+
 
 
 
@@ -92,6 +101,13 @@ root.render(
             <Route path='/:lang?/academics-of-the-center' element={<AcademicsOfTheCenterPage />} />
 
             <Route path='/:lang?/management' element={<Management />} />
+
+
+
+            {/* Publications Page*/}
+
+            <Route path='/:lang?/uzbekistan-history-of-material-culture' element={<UzbekistanHistoryOfMaterialCulturePage/>}/>
+
 
 
             {/* Contacts Page */}

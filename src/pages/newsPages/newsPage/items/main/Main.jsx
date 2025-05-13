@@ -4,6 +4,7 @@ import Category from '../../../../../components/category/Category';
 import Section from '../section/Section';
 
 export default function Main() {
+  
   const menuData = [
     {
       text: {

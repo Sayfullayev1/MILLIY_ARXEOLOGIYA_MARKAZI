@@ -166,7 +166,7 @@ export default function NavbarComponent() {
               ru: "Учебные пособия",
               en: "Tutorials",
             },
-            link: "/tutorials",
+            link: "/teaching-aids",
 
             extendedItems: ""
           },

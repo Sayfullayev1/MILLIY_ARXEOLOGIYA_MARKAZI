@@ -1,0 +1,11 @@
+@charset "UTF-8";
+.contacts-page__card {
+  width: 100%;
+  margin: 0 auto; /* Центрируем карту */
+  border: 1px solid #ccc;
+}
+.contacts-page__card__map {
+  width: 100%;
+  aspect-ratio: 1/1;
+  max-height: 450px;
+}/*# sourceMappingURL=card.css.map */

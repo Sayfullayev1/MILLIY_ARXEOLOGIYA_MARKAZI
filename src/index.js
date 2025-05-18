@@ -33,6 +33,7 @@ import AcademicsOfTheCenterPage from './pages/aboutPages/academicsOfTheCenterPag
 
 /* Publications Page*/
 
+import TeachingAidsPage from './pages/publicationsPages/teachingAidsPage/TeachingAidsPage';
 import UzbekistanHistoryOfMaterialCulturePage from './pages/publicationsPages/uzbekistanHistoryOfMaterialCulturePage/UzbekistanHistoryOfMaterialCulturePage';
 
 
@@ -49,6 +50,7 @@ import ContactsPage from './pages/contactsPage/ContactsPage';
 
 import NewsPage from './pages/newsPages/newsPage/NewsPage';
 import NewsDetailPage from './pages/newsPages/newsDetailPage/NewsDetailPage';
+
 
 
 
@@ -105,6 +107,9 @@ root.render(
 
 
             {/* Publications Page*/}
+
+
+            <Route path='/:lang?/teaching-aids' element={<TeachingAidsPage/>}/>
 
             <Route path='/:lang?/uzbekistan-history-of-material-culture' element={<UzbekistanHistoryOfMaterialCulturePage/>}/>
 

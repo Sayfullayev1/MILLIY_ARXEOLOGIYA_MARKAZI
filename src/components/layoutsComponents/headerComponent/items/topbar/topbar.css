@@ -1,0 +1,61 @@
+.header__topbar {
+  padding: 10px 3%;
+  border-bottom: 0.8px solid #c6c6c6;
+}
+.header__topbar__text {
+  display: flex;
+  gap: 5px;
+}
+.header__topbar__text > h1 {
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  color: #2e2e2e;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+}
+.header__topbar__text > h1:hover {
+  color: #0060f0;
+  text-decoration: underline;
+}
+.header__topbar__socials {
+  padding: 0 4%;
+}
+.header__topbar__socials__text {
+  font-size: 13px;
+  font-weight: 300;
+}
+
+@media (min-width: 590px) {
+  .header__topbar {
+    padding: 14px 3%;
+  }
+  .header__topbar__container {
+    display: flex;
+    gap: 25px;
+  }
+  .header__topbar__socials {
+    padding: 0;
+  }
+  .header__topbar__socials__text {
+    font-size: 13px;
+    font-weight: 300;
+  }
+}
+@media (min-width: 690px) {
+  .header__topbar {
+    padding: 14px 4%;
+  }
+}
+@media (min-width: 1300px) {
+  .header__topbar {
+    padding: 14px 0;
+  }
+  .header__topbar__container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0px 3%;
+    display: flex;
+    gap: 25px;
+  }
+}/*# sourceMappingURL=topbar.css.map */

@@ -1,0 +1,97 @@
+@charset "UTF-8";
+.container {
+  padding: 40px 5%;
+  font-family: "Roboto", sans-serif;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr; /* По умолчанию 1 колонка */
+  gap: 24px;
+}
+
+.card {
+  background-color: #ffffff;
+  border: 1px solid #e6e6e6;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+}
+
+.cardImage {
+  width: 100%;
+  height: 180px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  background-color: #f0f0f0;
+}
+
+.cardContent {
+  padding: 20px;
+}
+
+.cardTitle {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.cardDate {
+  font-size: 0.9rem;
+  color: #888;
+  margin-bottom: 12px;
+}
+
+.cardDescription {
+  font-size: 1rem;
+  color: #555;
+  flex-grow: 1;
+  margin-bottom: 16px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.cardButton {
+  align-self: flex-start;
+  font-size: 0.9rem;
+  color: #007bff;
+  padding: 8px 14px;
+  border: 2px solid #007bff;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+.cardButton:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+/* Адаптивность для более широких экранов */
+@media (min-width: 480px) {
+  .grid {
+    grid-template-columns: 1fr 1fr; /* Сетку с двумя колонками на средних экранах */
+  }
+}
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr 1fr 1fr; /* Три колонки на более широких экранах */
+  }
+}
+@media (min-width: 1000px) {
+  .grid {
+    grid-template-columns: 1fr 1fr 1fr 1fr; /* Четыре колонки на экранах 1000px и выше */
+  }
+}
+@media (min-width: 1300px) {
+  .container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 60px 4%;
+  }
+}/*# sourceMappingURL=section.module.css.map */

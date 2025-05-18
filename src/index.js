@@ -33,6 +33,7 @@ import AcademicsOfTheCenterPage from './pages/aboutPages/academicsOfTheCenterPag
 
 /* Publications Page*/
 
+import MonographsPage from './pages/publicationsPages/monographsPage/MonographsPage';
 import TeachingAidsPage from './pages/publicationsPages/teachingAidsPage/TeachingAidsPage';
 import UzbekistanHistoryOfMaterialCulturePage from './pages/publicationsPages/uzbekistanHistoryOfMaterialCulturePage/UzbekistanHistoryOfMaterialCulturePage';
 
@@ -50,6 +51,12 @@ import ContactsPage from './pages/contactsPage/ContactsPage';
 
 import NewsPage from './pages/newsPages/newsPage/NewsPage';
 import NewsDetailPage from './pages/newsPages/newsDetailPage/NewsDetailPage';
+
+
+/* ACTIVITIY Page */
+
+import TheMostImportantResearchResultsPage from './pages/activityPages/theMostImportantResearchResultsPage/TheMostImportantResearchResultsPage';
+
 
 
 
@@ -99,6 +106,7 @@ root.render(
 
             <Route path='/:lang?/charter-of-the-center' element={<CharterOfTheCenterPage />} />
 
+            <Route path='/:lang?/monographs' element={<MonographsPage />} />
 
             <Route path='/:lang?/academics-of-the-center' element={<AcademicsOfTheCenterPage />} />
 
@@ -112,6 +120,13 @@ root.render(
             <Route path='/:lang?/teaching-aids' element={<TeachingAidsPage/>}/>
 
             <Route path='/:lang?/uzbekistan-history-of-material-culture' element={<UzbekistanHistoryOfMaterialCulturePage/>}/>
+
+
+
+            {/* ACTIVITIY Page */}
+
+             <Route path='/:lang?/the-most-important-research-results' element={<TheMostImportantResearchResultsPage/>}/>
+
 
 
 

@@ -200,7 +200,7 @@ export default function NavbarComponent() {
                 ru: "Важнейшие результаты исследований",
                 en: "The most important research results",
               },
-              link: "/important-research-results",
+              link: "/the-most-important-research-results",
 
               extendedItems: ""
             },

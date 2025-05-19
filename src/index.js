@@ -40,12 +40,6 @@ import UzbekistanHistoryOfMaterialCulturePage from './pages/publicationsPages/uz
 
 
 
-/* Contacts Page*/ 
-import ContactsPage from './pages/contactsPage/ContactsPage';
-
-
-
-
 
 /* Publications Page*/
 
@@ -56,7 +50,14 @@ import NewsDetailPage from './pages/newsPages/newsDetailPage/NewsDetailPage';
 /* ACTIVITIY Page */
 
 import TheMostImportantResearchResultsPage from './pages/activityPages/theMostImportantResearchResultsPage/TheMostImportantResearchResultsPage';
+import ScienceActionPlanPage from './pages/activityPages/scienceActionPlanPage/ScienceActionPlanPage';
 
+
+
+
+
+/* Contacts Page*/ 
+import ContactsPage from './pages/contactsPage/ContactsPage';
 
 
 
@@ -127,6 +128,7 @@ root.render(
 
              <Route path='/:lang?/the-most-important-research-results' element={<TheMostImportantResearchResultsPage/>}/>
 
+            <Route path='/:lang?/science-action-plan' element={<ScienceActionPlanPage/>}/>
 
 
 

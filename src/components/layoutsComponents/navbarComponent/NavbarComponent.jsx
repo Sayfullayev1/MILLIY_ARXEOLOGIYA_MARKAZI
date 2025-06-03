@@ -228,29 +228,6 @@ export default function NavbarComponent() {
       },
       {
         Name: {
-          uz: "Loyihalar",
-          ru: "Проекты",
-          en: "Projects",
-
-          items: {
-            
-          },
-        },
-        link: "/loyihalar",
-        items: "",
-      },
-      {
-        Name: {
-          uz: "Aloqa",
-          ru: "Контакты",
-          en: "Contacts",
-        },
-
-        link: "/aloqa",
-        items: "",
-      },
-      {
-        Name: {
           uz: "Yangiliklar",
           ru: "Новости",
           en: "News",
@@ -292,12 +269,12 @@ export default function NavbarComponent() {
       },
       {
         Name: {
-          uz: "Qo'shimcha",
-          ru: "Дополнительно",
-          en: "Additional",
+          uz: "Aloqa",
+          ru: "Контакты",
+          en: "Contacts",
         },
 
-        link: "/qoshimcha",
+        link: "/contacts",
         items: "",
       },
     ]

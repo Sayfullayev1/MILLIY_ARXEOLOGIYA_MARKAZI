@@ -127,7 +127,7 @@ export default function Section() {
                         }
                     </p>
                     <button className="home-page__section__cta-button">
-                        <Link to={"/"}>
+                        <Link to={`contacts`}>
                             {
                                 language === "uz" ? "Biz bilan bog‘laning" : language === "ru" ? "Связаться с нами" : "Contact us"
                             }

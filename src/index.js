@@ -51,16 +51,13 @@ import NewsDetailPage from './pages/newsPages/newsDetailPage/NewsDetailPage';
 
 import TheMostImportantResearchResultsPage from './pages/activityPages/theMostImportantResearchResultsPage/TheMostImportantResearchResultsPage';
 import ScienceActionPlanPage from './pages/activityPages/scienceActionPlanPage/ScienceActionPlanPage';
-
+import BoardOfYoungScientistsPage from './pages/activityPages/boardOfYoungScientistsPage/BoardOfYoungScientistsPage';
 
 
 
 
 /* Contacts Page*/ 
 import ContactsPage from './pages/contactsPage/ContactsPage';
-
-
-
 
 
 
@@ -126,15 +123,17 @@ root.render(
 
             {/* ACTIVITIY Page */}
 
-             <Route path='/:lang?/the-most-important-research-results' element={<TheMostImportantResearchResultsPage/>}/>
+            <Route path='/:lang?/the-most-important-research-results' element={<TheMostImportantResearchResultsPage/>}/>
 
             <Route path='/:lang?/science-action-plan' element={<ScienceActionPlanPage/>}/>
+
+            <Route path='/:lang?/board-of-young-scientists' element={<BoardOfYoungScientistsPage/>}/>
 
 
 
             {/* Contacts Page */}
 
-            <Route path="/:lang?/aloqa" element={<ContactsPage />} />
+            <Route path="/:lang?/contacts" element={<ContactsPage />} />
 
 
 

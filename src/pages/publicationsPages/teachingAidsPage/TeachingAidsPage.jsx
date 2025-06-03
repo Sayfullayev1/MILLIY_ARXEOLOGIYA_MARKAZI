@@ -73,7 +73,6 @@ export default function TeachingAidsPage() {
             </ul>
 
         </main>
-      
     </div>
   )
 }

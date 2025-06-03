@@ -1,38 +1,39 @@
-import React, { useContext } from 'react'
+import React, { use, useContext, useEffect, useState } from 'react'
 import "./interdisciplinaryResearchPage.scss"
 import { LanguageContext } from '../../../../context/LanguageContext';
 
 
 import Category from '../../../../components/category/Category';
 import { Link } from 'react-router-dom';
+import getApiUrl from '../../../../api/api';
 
 
 export default function InterdisciplinaryResearchPage() {
 
 
-    const { language } = useContext(LanguageContext);
+  const { language } = useContext(LanguageContext);
     
-    const menuData = [
-                {
-                  text: {
-                    uz: "Bosh sahifa",
-                    ru: "Главная",
-                    en: "Main",
-                  },
-                  link: "/",
-                },
-                {
-                  text: {
-                    uz: "Fanlararo tadqiqotlar bo'limi",
-                    ru: "Отдел междисциплинарных исследований",
-                    en: "Department of Interdisciplinary Research",
-                  },
-                  link: "/",
-                },
-        ];
+  const menuData = [
+      {
+        text: {
+          uz: "Bosh sahifa",
+          ru: "Главная",
+          en: "Main",
+        },
+        link: "/",
+      },
+      {
+        text: {
+          uz: "Fanlararo tadqiqotlar bo'limi",
+          ru: "Отдел междисциплинарных исследований",
+          en: "Department of Interdisciplinary Research",
+        },
+        link: "/",
+      },
+    ];
 
 
-        const listOfEnumerations = [
+  const listOfEnumerations = [
             {
               uz: "- mintaqa tarixining dolzarb masalalari bo‘yicha ilmiy izlanishlar olib borish;",
               ru: "- проведение научных исследований по актуальным вопросам истории региона;",
@@ -68,51 +69,68 @@ export default function InterdisciplinaryResearchPage() {
               ru: "- установление научных связей с институтами Отделения естественных наук АН РУз, высшими учебными заведениями и зарубежными научными центрами;",
               en: "- establishing scientific collaborations with institutes of the Natural Sciences Division of the Academy of Sciences of Uzbekistan, higher education institutions and foreign research centers;"
             }
-          ];
+    ];
 
 
-          const documentsList = [
-            {
-              Name: {
-                uz: "1. Bo'lim nizomi",
-                ru: "1. Устав отдела",
-                en: "1. Department Charter"
-              },
-              Link: ""
-            },
-            {
-              Name: {
-                uz: "2. Bo'lim yo'l xaritasi",
-                ru: "2. Дорожная карта отдела",
-                en: "2. Department Roadmap"
-              },
-              Link: ""
-            },
-            {
-              Name: {
-                uz: "3. Bo'limning 2020-2024 yillar uchun dasturi",
-                ru: "3. Программа отдела на 2020-2024 годы",
-                en: "3. Department Program for 2020-2024"
-              },
-              Link: ""
-            },
-            {
-              Name: {
-                uz: "4. Bo'lim xodimlari hisoboti",
-                ru: "4. Отчет сотрудников отдела",
-                en: "4. Department Staff Report"
-              },
-              Link: ""
-            },
-            {
-              Name: {
-                uz: "Bo'lim xodimlari to'grisida batafsil ma'lumotlar",
-                ru: "Подробная информация о сотрудниках отдела",
-                en: "Detailed Information About Department Staff"
-              },
-              Link: ""
-            }
-          ];
+  const [documentsList, setDocumentsList] = useState([]);
+
+
+  const api = getApiUrl();
+
+  useEffect(() => {
+
+    const fetchDocumentsList = async () => {
+      try {
+          const response = await fetch(`${api}/api/departments-and-laboratories/interdisciplinary-research-page-data`);
+          if (!response.ok) {
+              throw new Error('Network response was not ok');
+          }
+          const data = await response.json();
+          setDocumentsList(data.data);
+          // console.log('Documents list fetched successfully:', data.data);
+          
+      } catch (error) {
+          console.error('Error fetching documents list:', error);
+      }
+    }
+    fetchDocumentsList();
+    
+  }, [api]);
+
+
+
+  const [staffList, setStaffList] = useState([]);
+
+  useEffect(() => {
+
+    const fetchDocumentsList = async () => {
+      try {
+          const response = await fetch(`${api}/api/departments-and-laboratories/interdisciplinary-research-page-staff-data`);
+          if (!response.ok) {
+              throw new Error('Network response was not ok');
+          }
+          const data = await response.json();
+          setStaffList(data.message);
+          console.log('Documents list fetched successfully:', data);
+          
+      } catch (error) {
+          console.error('Error fetching documents list:', error);
+      }
+    }
+    fetchDocumentsList();
+
+    
+    
+  }, [api]);
+
+  const [ selectedStaffIndex, setSelectedStaffIndex] = useState(false);
+
+  function clikGetStaff(index) {
+    if ( index === 4 ) {
+      setSelectedStaffIndex(true);
+    }
+  }
+
 
 
   return (
@@ -122,7 +140,7 @@ export default function InterdisciplinaryResearchPage() {
         <Category data={menuData}/>
 
 
- <main className='interdisciplinary-research-page__main'>
+        <main className='interdisciplinary-research-page__main'>
 
             <p className='interdisciplinary-research-page__main__text'>
                 {
@@ -185,15 +203,57 @@ export default function InterdisciplinaryResearchPage() {
 
             <ul className='interdisciplinary-research-page__main__info-list'>
               {
-                documentsList.map((item, index) => (
+                documentsList?.map((item, index) => (
                   <li className='interdisciplinary-research-page__main__info-item' key={index}>
-                    <Link to={item.Link}>
+                    <Link to={item.Link} onClick={() => clikGetStaff(index)}>
                       {item.Name[language]}
                     </Link>
                   </li>
                 ))
               }
             </ul>
+
+
+            <div className='interdisciplinary-research-page__main__staff'>
+
+              {
+                selectedStaffIndex && (
+                  <div className='interdisciplinary-research-page__main__staff-list'>
+                    {
+                      staffList?.map((item, index) => (
+                        <div className='interdisciplinary-research-page__main__staff-item' key={index}>
+                          <div className='interdisciplinary-research-page__main__staff-photo'>
+                            <img src={item.photo} alt={item.Name[language]} />
+                          </div>
+                          <div className='interdisciplinary-research-page__main__staff-item-info'>
+                            <h2>{item.Name[language]}</h2>
+
+                            <h3>
+                              {
+                                item.job_title[language]
+                              }
+                            </h3>
+                         
+                            <h3>{item.phone}</h3>
+                        
+                            <h3>{item.email}</h3>
+                            <Link to={item.infoLink} target="_blank">
+                              {
+                                language === "uz" ? "Ilmiy faoliyat to'g'risida" :
+                                language === "ru" ? "О научной деятельности" :
+                                "About scientific activity"
+                              }
+                            </Link>
+                          </div>
+                        </div>
+                      ))
+                    }
+                  </div>
+                )
+              }
+
+            </div>
+
 
         </main>
 

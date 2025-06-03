@@ -1,8 +1,9 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import './bioarchaeologyLaboratoryPage.scss'
 import Category from '../../../../components/category/Category'
 import { LanguageContext } from '../../../../context/LanguageContext';
 import { Link } from 'react-router-dom';
+import getApiUrl from '../../../../api/api';
 
 export default function BioarchaeologyLaboratoryPage() {
 
@@ -31,84 +32,106 @@ export default function BioarchaeologyLaboratoryPage() {
     const listOfEnumerations = [
       {
         uz: "- respublika bo‘ylab olib borilayotgan arxeologik izlanishlarda tabiiy fanlarning zamonaviy tadqiqot usullarini keng qo‘llaydi;",
-        ru: "",
-        en: "",
+        ru: "- широкое применение современных методов естественных наук в археологических исследованиях, проводимых по всей республике;",
+        en: "- the wide application of modern methods of natural sciences in archaeological research conducted throughout the republic;",
       },
       {
         uz: "- arxeologik qazishmalar chog‘ida yoki tasodifan topilgan inson osteologik qoldiqlari qayta tiklash orqali paleodemografiya, o‘tmishda yashagan kishining sog‘lig‘i, turmush darajasi va ovqatlanish ratsionini aniqlaydi;",
-        ru: "",
-        en: "",
+        ru: "- реконструкция человеческих остатков, найденных во время археологических раскопок или случайных находок, для определения палеодемографических данных, состояния здоровья, уровня жизни и рациона питания древнего человека;",
+        en: "- reconstruction of human osteological remains found during archaeological excavations or accidental discoveries to determine paleodemographic data, health status, standard of living, and diet of ancient people;",
       },
       {
         uz: "- arxeologik qazishmalardan chiqqan o‘simlik, urug‘, meva va gul changlarining qoldiqlarini o‘rganish va interpretatsiyalash orqali qadimgi O‘zbekiston florasi, o‘tmish kishilarining ovqatlanish ratsioni, ularning yashash strategiyasi va o‘simlik iqtisodiyotini qayta tiklaydi;",
-        ru: "",
-        en: "",
+        ru: "- изучение и интерпретация остатков растений, семян, фруктов и пыльцы, найденных в ходе археологических раскопок, с целью восстановления древней флоры Узбекистана, питания древних людей, их стратегий выживания и экономики растений;",
+        en: "- studying and interpreting the remains of plants, seeds, fruits, and pollen found during archaeological excavations to reconstruct the ancient flora of Uzbekistan, the diet of ancient people, their survival strategies, and plant economy;",
       },
       {
         uz: "- o‘tmishda inson va hayvonat dunyosi (fauna) munosabatini, o‘tmish landshafti va iqlimini, xo‘jaligini qazishmalar chog‘ida topilgan hayvon suyaklari qoldiqlari orqali o‘rganadi;",
-        ru: "",
-        en: "",
+        ru: "- исследование взаимоотношений между человеком и животным миром (фауной) в древности, древних ландшафтов, климата и хозяйства на основе остатков костей животных, обнаруженных во время раскопок;",
+        en: "- studying the relationships between humans and the animal world (fauna) in ancient times, ancient landscapes, climate, and economy based on the remains of animal bones found during excavations;",
       },
       {
         uz: "- qadimda O‘rta Osiyo bo‘ylab o‘tgan Buyuk ipak yo‘lidagi tijoriy-madaniy va xo‘jalik munosabatlarini ochiqlashda bioarxeologik artefaktlardan foydalanadi;",
-        ru: "",
-        en: "",
+        ru: "- использование биоархеологических артефактов для выявления торгово-культурных и хозяйственных связей Великого шелкового пути в древности; подготовка научных кадров в области биоархеологии;",
+        en: "- using bioarchaeological artifacts to reveal the trade, cultural, and economic relations along the Great Silk Road in ancient times; training scientific personnel in the field of bioarchaeology;",
       },
       {
         uz: "- bioarxeologiya yo‘nalishida ilmiy kadrlar tayyorlaydi;",
-        ru: "",
-        en: "",
+        ru: "- установление научных связей с институтами Отделения естественных наук Академии наук Республики Узбекистан, высшими учебными заведениями и зарубежными научными центрами.",
+        en: "- establishing scientific links with institutes of the Department of Natural Sciences of the Academy of Sciences of the Republic of Uzbekistan, higher educational institutions and foreign scientific centers.",
       },
       {
         uz: "- O‘zR FAning Tabiiy fanlar bo‘limi institutlari, OTMlari va chet eldagi ilmiy markazlar bilan ilmiy aloqalarni yo‘lga qo‘yadi.",
-        ru: "",
-        en: "",
+        ru: "- Научные исследования в этой лаборатории проводятся в интеграции с археологией и естественными науками. В настоящее время ведётся работа по организационным аспектам лаборатории, включая составление списка оборудования и приборов, разработку сметы расходов на их приобретение, а также привлечение и подготовку научных сотрудников и лаборантов, способных использовать эти инструменты в своих исследованиях.",
+        en: "- The research in this laboratory is carried out in integration with archaeology and natural sciences. Work is currently underway on the organizational aspects of the laboratory, including compiling a list of equipment and instruments, developing a cost estimate for their acquisition, and recruiting and training researchers and laboratory technicians who can use these instruments in their research.",
       },
     ]
 
 
-    const documentsList = [
-      {
-        Name: {
-          uz: "1. Laboratoriya nizomi",
-          ru: "1. Устав лаборатории",
-          en: "1. Laboratory Charter"
-        },
-        Link: ""
-      },
-      {
-        Name: {
-          uz: "2. Laboratoriya yo'l xaritasi",
-          ru: "2. Дорожная карта лаборатории",
-          en: "2. Laboratory Roadmap"
-        },
-        Link: ""
-      },
-      {
-        Name: {
-          uz: "3. Laboratoriyaning 2020-2024 yillar uchun dasturi",
-          ru: "3. Программа лаборатории на 2020-2024 годы",
-          en: "3. Laboratory Program for 2020-2024"
-        },
-        Link: ""
-      },
-      {
-        Name: {
-          uz: "4. Laboratoriya xodimlari hisoboti",
-          ru: "4. Отчёт сотрудников лаборатории",
-          en: "4. Laboratory Staff Report"
-        },
-        Link: ""
-      },
-      {
-        Name: {
-          uz: "Laboratoriya xodimlari to'grisida batafsil ma'lumotlar",
-          ru: "Подробная информация о сотрудниках лаборатории",
-          en: "Detailed Information About Laboratory Staff"
-        },
-        Link: ""
-      },
-    ]
+    // const documentsList = [
+    //   {
+    //     Name: {
+    //       uz: "1. Laboratoriya nizomi",
+    //       ru: "1. Устав лаборатории",
+    //       en: "1. Laboratory Charter"
+    //     },
+    //     Link: ""
+    //   },
+    //   {
+    //     Name: {
+    //       uz: "2. Laboratoriya yo'l xaritasi",
+    //       ru: "2. Дорожная карта лаборатории",
+    //       en: "2. Laboratory Roadmap"
+    //     },
+    //     Link: ""
+    //   },
+    //   {
+    //     Name: {
+    //       uz: "3. Laboratoriyaning 2020-2024 yillar uchun dasturi",
+    //       ru: "3. Программа лаборатории на 2020-2024 годы",
+    //       en: "3. Laboratory Program for 2020-2024"
+    //     },
+    //     Link: ""
+    //   },
+    //   {
+    //     Name: {
+    //       uz: "4. Laboratoriya xodimlari hisoboti",
+    //       ru: "4. Отчёт сотрудников лаборатории",
+    //       en: "4. Laboratory Staff Report"
+    //     },
+    //     Link: ""
+    //   },
+    //   {
+    //     Name: {
+    //       uz: "Laboratoriya xodimlari to'grisida batafsil ma'lumotlar",
+    //       ru: "Подробная информация о сотрудниках лаборатории",
+    //       en: "Detailed Information About Laboratory Staff"
+    //     },
+    //     Link: ""
+    //   },
+    // ]
+
+    const api = getApiUrl();
+
+
+    const [documentsList, setDocumentsList] = useState([]);
+
+    useEffect(() => {
+        const fetchDocumentsList = async () => {
+            try {
+                const response = await fetch(`${api}/api/departments-and-laboratories/bioarchaeology-laboratory-page-data/`);
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                const data = await response.json();
+                setDocumentsList(data.data);
+            } catch (error) {
+                console.error('Error fetching documents list:', error);
+            }
+        }
+        fetchDocumentsList();
+    }, [api]);
+
 
 
   return (

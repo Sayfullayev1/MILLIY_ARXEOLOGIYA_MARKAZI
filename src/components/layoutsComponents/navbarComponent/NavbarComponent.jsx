@@ -93,7 +93,7 @@ export default function NavbarComponent() {
                   ru: "Лаборатория ландшафтной археологии",
                   en: "Landscape Archaeology Laboratory",
                 },
-                link: "/landscape-archeology-laboratoryy",
+                link: "/landscape-archeology-laboratory",
               }
             ],
           },

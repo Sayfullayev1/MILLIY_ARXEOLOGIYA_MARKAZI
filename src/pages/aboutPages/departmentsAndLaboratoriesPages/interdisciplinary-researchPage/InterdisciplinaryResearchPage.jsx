@@ -233,6 +233,18 @@ export default function InterdisciplinaryResearchPage() {
                                 item.job_title[language]
                               }
                             </h3>
+
+                            <h4>
+                              {
+                                language === "uz" ? "Ilmiy daraja va unvon:" :
+                                language === "ru" ? "Степен, должность:" :
+                                "Academic degree and title:"
+                              }
+                              <br />
+                              {
+                                item.AcademicDegreeAndTitle[language] || "-"
+                              }
+                            </h4>
                          
                             <h3>{item.phone}</h3>
                         

@@ -41,10 +41,16 @@ import UzbekistanHistoryOfMaterialCulturePage from './pages/publicationsPages/uz
 
 
 
-/* Publications Page*/
+/* News Page*/
 
+import ArticlesPage from './pages/publicationsPages/articlesPage/ArticlesPage';
 import NewsPage from './pages/newsPages/newsPage/NewsPage';
 import NewsDetailPage from './pages/newsPages/newsDetailPage/NewsDetailPage';
+import PhotoGalleryPage from './pages/newsPages/photoGalleryPage/PhotoGalleryPage';
+import PhotoGalleryDetailPage from './pages/newsPages/photoGalleryDetailPage/PhotoGalleryDetailPage';
+
+
+
 
 
 /* ACTIVITIY Page */
@@ -58,8 +64,6 @@ import BoardOfYoungScientistsPage from './pages/activityPages/boardOfYoungScient
 
 /* Contacts Page*/ 
 import ContactsPage from './pages/contactsPage/ContactsPage';
-
-
 
 
 
@@ -115,6 +119,8 @@ root.render(
             {/* Publications Page*/}
 
 
+            <Route path='/:lang?/articles' element={<ArticlesPage/>}/>
+
             <Route path='/:lang?/teaching-aids' element={<TeachingAidsPage/>}/>
 
             <Route path='/:lang?/uzbekistan-history-of-material-culture' element={<UzbekistanHistoryOfMaterialCulturePage/>}/>
@@ -143,6 +149,10 @@ root.render(
 
 
               <Route path="/:lang?/news/:id" element={<NewsDetailPage />} />
+
+              <Route path="/:lang?/photo-gallery" element={<PhotoGalleryPage />} />
+
+              <Route path="/:lang?/photo-gallery/:id" element={<PhotoGalleryDetailPage />} />
 
 
 

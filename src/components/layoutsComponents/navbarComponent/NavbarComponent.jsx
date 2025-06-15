@@ -265,6 +265,16 @@ export default function NavbarComponent() {
 
             extendedItems: ""
           },
+          {
+            Name: {
+              uz: "Fotogalereya",
+              ru: "Фотогалерея",
+              en: "Photo Gallery",
+            },
+            link: "/photo-gallery",
+
+            extendedItems: ""
+          },
         ],
       },
       {
@@ -324,7 +334,12 @@ export default function NavbarComponent() {
                             <li className={`navbar__submenu__item ${subItem.extendedItems.length > 0 ? "navbar__submenu__extended-item" : ""}`} key={subIndex}>
                               <Link
                                 className='navbar__submenu__link'
-                                to={`/${language}${subItem.link}`}
+                                to={
+                                  subItem.extendedItems.length !== 0
+                                    ? undefined
+                                    : `/${language}${subItem.link}`
+                                }
+
                               >
                                 {subItem.Name[language]}
                               </Link>

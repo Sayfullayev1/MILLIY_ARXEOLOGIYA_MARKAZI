@@ -37,7 +37,15 @@ export default function Main() {
 
 
       <section className="history-of-the-center-page__main__section">
-        <h1 className="history-of-the-center-page__main__section__title">Milliy Arxeologiya markazi tarixi</h1>
+        <h1 className="history-of-the-center-page__main__section__title">
+          {
+            language === "uz"
+              ? "Milliy Arxeologiya markazi tarixi"
+              : language === "ru"
+              ? "История Национального археологического центра"
+              : "Milliy Arxeologiya markazi tarixi"
+          }
+        </h1>
         <div className="history-of-the-center-page__main__section__content-wrapper">
           <p className="history-of-the-center-page__main__section__content">
             <img
@@ -105,7 +113,7 @@ export default function Main() {
           <h2 className='history-of-the-center-page__main__section__info'>
             {
               language === "uz"
-              ? "Tashkil topgan yili: O‘zSSR Ministrlar Kabinetining 1970-yil 19-avgustidagi №426-sonli qaroriga ko‘ra dastlab Samarqand shahrida O‘zR FA Arxeologiya instituti tashkil etilgan. Keyinchalik, O‘zbekiston Respublikasi Prezidentining 2017-yil 17-fevraldagi PP-2789-sonli “Fanlar akademiyasi faoliyati, ilmiy-tadqiqot ishlarini tashkil etish, boshqarish va moliyalashtirishni yanada takomillashtirish chora-tadbirlari to‘g‘risida”gi qaroriga binoan O‘zbekiston Respublikasi Fanlar akademiyasi Arxeologik tadqiqotlar instituti deb nomlandi. O‘zbekiston Respublikasi Vazirlar Mahkamasining 2019-yil 21-sentabrdagi 792-sonli qarori bilan O‘zbekiston Respublikasi Fanlar академияси Arxeologik tadқиқотлар институти negizида O‘zR Fanlar академияси Milliy arxeologiya markazi tashkil этилди."
+              ? "Tashkil topgan yili: O‘zSSR Ministrlar Kabinetining 1970-yil 19-avgustidagi №426-sonli qaroriga ko‘ra dastlab Samarqand shahrida O‘zR FA Arxeologiya instituti tashkil etilgan. Keyinchalik, O‘zbekiston Respublikasi Prezidentining 2017-yil 17-fevraldagi PP-2789-sonli “Fanlar akademiyasi faoliyati, ilmiy-tadqiqot ishlarini tashkil etish, boshqarish va moliyalashtirishni yanada takomillashtirish chora-tadbirlari to‘g‘risida”gi qaroriga binoan O‘zbekiston Respublikasi Fanlar akademiyasi Arxeologik tadqiqotlar instituti deb nomlandi. O‘zbekiston Respublikasi Vazirlar Mahkamasining 2019-yil 21-sentabrdagi 792-sonli qarori bilan O‘zbekiston Respublikasi Fanlar академияси Arxeologik tadқиқotлар институти negizида O‘zR Fanlar академияси Milliy arxeologiya markazi tashkil этилди."
               : language === "ru"
                 ? "Год основания: В соответствии с постановлением Кабинета Министров УзССР от 19 августа 1970 года №426 в городе Самарканд был создан Институт археологии АН УзССР. Позднее, согласно постановлению Президента Республики Узбекистан от 17 февраля 2017 года №PP-2789 «О мерах по дальнейшему совершенствованию деятельности Академии наук, организации, управления и финансирования научно-исследовательских работ», институт был переименован в Институт археологических исследований Академии наук Республики Узбекистан. Постановлением Кабинета Министров Республики Узбекистан от 21 сентября 2019 года №792 на базе Института археологических исследований был создан Национальный центр археологии Академии наук Республики Узбекистан."
               : language === "en"

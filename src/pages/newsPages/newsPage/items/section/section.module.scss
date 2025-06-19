@@ -1,104 +1,113 @@
 .container {
-  padding: 40px 5%;
+  padding: 40px 0;
   font-family: 'Roboto', sans-serif;
 }
 
-
-
-.grid {
+.cardContainer {
   display: grid;
-  grid-template-columns: 1fr; /* По умолчанию 1 колонка */
-  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
 }
 
-.card {
-  background-color: #ffffff;
-  border: 1px solid #e6e6e6;
-  border-radius: 10px;
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+.newsCard {
+  // background-color: #fff;
+  // border: 1px solid #e0e0e0;
+  // border-radius: 8px;
+  // overflow: hidden;
+  // box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+  display: flex;
+  flex-direction: column;
 
   &:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+    transform: translateY(-5px);
   }
 }
 
-.cardImage {
+.newsCard_link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.newsCard_imageWrapper {
   width: 100%;
-  height: 180px;
+  // height: 180px;
+  aspect-ratio: 16 / 11;
+  overflow: hidden;
+  // background: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.newsCard_image {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  background-color: #f0f0f0;
+  display: block;
+  border-radius: 8px 8px 0 0;
 }
 
-.cardContent {
-  padding: 20px;
-}
 
-.cardTitle {
-  font-size: 1.3rem;
-  font-weight: 600;
-  margin-bottom: 8px;
-  color: #333;
-}
-
-.cardDate {
+.newsCard_data {
   font-size: 0.9rem;
   color: #888;
-  margin-bottom: 12px;
+  margin: 10px 0;
 }
 
-.cardDescription {
+.newsCard_title {
   font-size: 1rem;
   color: #555;
-  flex-grow: 1;
-  margin-bottom: 16px;
-
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
+  margin: 0 0 15px;
 }
 
-.cardButton {
-  align-self: flex-start;
-  font-size: 0.9rem;
-  color: #007bff;
-  padding: 8px 14px;
-  border: 2px solid #007bff;
-  border-radius: 6px;
-  text-decoration: none;
-  transition: all 0.3s ease;
 
-  &:hover {
-    background-color: #007bff;
-    color: white;
-  }
+
+
+.galleryPagination {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 32px 0 12px 0;
 }
+
+.galleryPageBtn {
+  background: #f4f6fa;
+  border: 1px solid #cfd8dc;
+  color: #1976d2;
+  border-radius: 7px;
+  padding: 7px 16px;
+  font-size: 1.08rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.16s, color 0.16s, border 0.16s;
+  outline: none;
+}
+
+.galleryPageBtn.active,
+.galleryPageBtn:hover {
+  background: #1976d2;
+  color: #fff;
+  border: 1.5px solid #1976d2;
+}
+
 
 /* Адаптивность для более широких экранов */
 @media (min-width: 480px) {
-  .grid {
+  .cardContainer {
     grid-template-columns: 1fr 1fr; /* Сетку с двумя колонками на средних экранах */
   }
 }
 
 @media (min-width: 768px) {
-  .grid {
+  .cardContainer {
     grid-template-columns: 1fr 1fr 1fr; /* Три колонки на более широких экранах */
   }
 }
 
 @media (min-width: 1000px) {
-  .grid {
+  .cardContainer {
     grid-template-columns: 1fr 1fr 1fr 1fr; /* Четыре колонки на экранах 1000px и выше */
-  }
-}
-
-
-@media (min-width: 1300px) {
-  .container {
-    max-width: 1300px;
-    margin: 0 auto;
-    padding: 60px 4%;
   }
 }

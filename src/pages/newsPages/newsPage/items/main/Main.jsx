@@ -2,6 +2,7 @@ import React from 'react';
 import './main.scss';
 import Category from '../../../../../components/category/Category';
 import Section from '../section/Section';
+import Container from '../../../../../components/container/Container';
 
 export default function Main() {
   
@@ -27,7 +28,9 @@ export default function Main() {
   return (
     <main className="contacts-page__main">
       <Category data={menuData} />
-      <Section />
+      <Container>
+        <Section />
+      </Container>
     </main>
   );
 }

@@ -1,109 +1,24 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import styles from './section.module.scss'; // Убедитесь, что файл section.module.scss существует
 import { LanguageContext } from '../../../../../context/LanguageContext';
 import { Link } from 'react-router-dom';
 
 import axios from 'axios';
 
-
-const newsData = [
-  {
-    id: 1,
-    title: 'Новость 1',
-    description: 'Краткое описание новости 1.',
-    date: '2023-10-01',
-    image: 'https://picsum.photos/300/180?random=1',
-    link: '/news/1',
-  },
-  {
-    id: 2,
-    title: 'Новость 2',
-    description: 'Краткое описание новости 2.',
-    date: '2023-10-02',
-    image: 'https://picsum.photos/300/180?random=2',
-    link: '/news/2',
-  },
-  {
-    id: 3,
-    title: 'Новость 3',
-    description: 'Краткое описание новости 3.',
-    date: '2023-10-03',
-    image: 'https://picsum.photos/300/180?random=3',
-    link: '/news/3',
-  },
-  {
-    id: 4,
-    title: 'Новость 4',
-    description: 'Краткое описание новости 4.',
-    date: '2023-10-04',
-    image: 'https://picsum.photos/300/180?random=4',
-    link: '/news/4',
-  },
-  {
-    id: 5,
-    title: 'Новость 5',
-    description: 'Краткое описание новости 5.',
-    date: '2023-10-05',
-    image: 'https://picsum.photos/300/180?random=5',
-    link: '/news/5',
-  },
-  {
-    id: 6,
-    title: 'Новость 6',
-    description: 'Краткое описание новости 6.',
-    date: '2023-10-06',
-    image: 'https://picsum.photos/300/180?random=6',
-    link: '/news/6',
-  },
-  {
-    id: 7,
-    title: 'Новость 7',
-    description: 'Краткое описание новости 7.',
-    date: '2023-10-07',
-    image: 'https://picsum.photos/300/180?random=7',
-    link: '/news/7',
-  },
-  {
-    id: 8,
-    title: 'Новость 8',
-    description: 'Краткое описание новости 8.',
-    date: '2023-10-08',
-    image: 'https://picsum.photos/300/180?random=8',
-    link: '/news/8',
-  },
-  {
-    id: 9,
-    title: 'Новость 9',
-    description: 'Краткое описание новости 9.',
-    date: '2023-10-09',
-    image: 'https://picsum.photos/300/180?random=9',
-    link: '/news/9',
-  },
-  {
-    id: 10,
-    title: 'Новость 10',
-    description: 'Краткое описание новости 10.',
-    date: '2023-10-10',
-    image: 'https://picsum.photos/300/180?random=10',
-    link: '/news/10',
-  },
-];
+import getApiUrl from '../../../../../api/api'; // Предполагается, что getApiUrl возвращает базовый URL API
 
 export default function Section() {
   const { language } = useContext(LanguageContext);
-  const [newsListData, setNewsListData] = React.useState([]);
+  const [newsListDataLength, setNewsListDataLength] = useState();
+  const [newsListData, setNewsListData] = useState([]);
+  const [numOfTheData, setNumOfTheData] = useState(1);
 
+  const api = getApiUrl()
 
-
-  const API_BASE_URL = 'https://milliy-arxeologiya-markazi-admin-api.onrender.com';
-
-  // const API_BASE_URL = 'http://localhost:3221'; // Для локального тестирования
-  
   useEffect(() => {
-    axios.get(`${API_BASE_URL}/api/newsData/all`)
+    axios.get(`${api}/api/news/get-published-count`)
       .then((response) => {
-        console.log('Ответ сервера:', response.data.data);
-        setNewsListData(response.data.data);
+        setNewsListDataLength(response.data.total);
       })
       .catch((error) => {
         console.error('Ошибка при получении данных:', error);
@@ -111,25 +26,85 @@ export default function Section() {
   }, []);
 
 
+
+  useEffect(() => {
+
+    const fetchGalleryItems = async () => {
+      axios.post(`${api}/api/news/get-item`, { page: numOfTheData })
+        .then(response => {
+          if (response.data.success) {
+            console.log('Полученные элементы галереи:', response.data.data);
+            setNewsListData(response.data.data);
+          } else {
+            console.error('Ошибка при получении элементов галереи:', response.data.message);
+          }
+        })
+        .catch(error => {
+          console.error('Ошибка при запросе элементов галереи:', error);
+      });
+    };
+
+    fetchGalleryItems();
+  }, [newsListDataLength, numOfTheData]);
+
+  
+  function formatDate(dateStr) {
+    if (!dateStr) return '';
+    const date = new Date(dateStr);
+    if (isNaN(date)) return '';
+    const day = String(date.getDate()).padStart(2, '0');
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const year = date.getFullYear();
+    return `${day}.${month}.${year}`;
+  }
+
+  const totalPages = Math.ceil((newsListDataLength || 0) / 16);
+  
+  const handlePageChange = (pageNum) => {
+    setNumOfTheData(pageNum);
+  };
+
   return (
     <section className={styles.container}>
       
-      <div className={styles.grid}>
-        {newsListData?.map((news) => (
-          <div key={news.id} className={styles.card}>
-            <img src={news.image} alt={news.title[language]} className={styles.cardImage} />
-            <div className={styles.cardContent}>
-              <h2 className={styles.cardTitle}>{news.title[language]}</h2>
-              <p className={styles.cardDate}>{news.date}</p>
-              <p className={styles.cardDescription}>{news.description[language]}</p>
-              <Link to={`/${language}/news/${news.slug}`} className={styles.cardButton}>
-                {language === 'uz' ? 'Batafsil' : language === 'ru' ? 'Подробнее' : 'Read more'}
-                <i class="fa-solid fa-arrow-right" style={{ marginLeft: '5px' }}></i>
-              </Link>
+
+      <div className={styles.cardContainer}>
+        {newsListData?.map((item, index) => {
+          return (
+            <div className={styles.newsCard} key={index}>
+                <Link className={styles.newsCard_link} to={item.link}>
+                    <div className={styles.newsCard_imageWrapper}>
+                        <img src={item.image} alt="" className={styles.newsCard_image}/>
+                    </div>
+                </Link>
+
+                <p className={styles.newsCard_data}>
+                  <i className="fa-regular fa-calendar-days"></i>  {formatDate(item.date)}
+                </p>
+                
+                <Link className={styles.newsCard_link} to={item.link}>
+                    <h1 className={styles.newsCard_title}>{item.title[language]}</h1>
+                </Link>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
+
+      {totalPages > 1 && (
+        <div className={styles.galleryPagination}>
+          {Array.from({ length: totalPages }, (_, i) => (
+            <button
+              key={i + 1}
+              className={`${styles.galleryPageBtn} ${numOfTheData === i + 1 ? styles.active : ''}`}
+              onClick={() => handlePageChange(i + 1)}
+            >
+              {i + 1}
+            </button>
+          ))}
+        </div>
+      )}
+         
+
     </section>
   );
 }

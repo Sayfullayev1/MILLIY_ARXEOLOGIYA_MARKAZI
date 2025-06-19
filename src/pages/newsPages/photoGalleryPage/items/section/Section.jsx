@@ -22,12 +22,8 @@ export default function Section() {
 
   useEffect(() => {
     const fetchPhotoGalleryLength = async () => {
-      const token = localStorage.getItem('token');
-      axios.get(`${API_BASE_URL}/api/photo-gallery/get-published-count`, {
-        headers: {
-          ...(token ? { Authorization: `Bearer ${token}` } : {})
-        }
-      })
+ 
+      axios.get(`${API_BASE_URL}/api/photo-gallery/get-published-count`)
         .then(response => {
           if (response.data.success) {
             setPhotoGaleryLength(response.data.total);
@@ -49,18 +45,12 @@ export default function Section() {
 
 
   useEffect(() => {
-    // setNumOfTheData(photoGaleryLength / 15);
 
     const fetchGalleryItems = async () => {
-      const token = localStorage.getItem('token');
-      axios.post(`${API_BASE_URL}/api/photo-gallery/get-item`, { page: numOfTheData }, {
-        headers: {
-          ...(token ? { Authorization: `Bearer ${token}` } : {})
-        }
-      })
+      axios.post(`${API_BASE_URL}/api/photo-gallery/get-item`, { page: numOfTheData })
         .then(response => {
           if (response.data.success) {
-            console.log('Полученные элементы галереи:', response.data.data);
+            // console.log('Полученные элементы галереи:', response.data.data);
             setGalleryItems(response.data.data);
           } else {
             console.error('Ошибка при получении элементов галереи:', response.data.message);
@@ -83,7 +73,7 @@ export default function Section() {
     const day = String(date.getDate()).padStart(2, '0');
     const month = String(date.getMonth() + 1).padStart(2, '0');
     const year = date.getFullYear();
-    return `${day}-${month}-${year}`;
+    return `${day}.${month}.${year}`;
   }
 
   // Количество страниц

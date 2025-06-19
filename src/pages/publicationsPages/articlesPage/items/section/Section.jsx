@@ -5,7 +5,7 @@ import { LanguageContext } from '../../../../../context/LanguageContext';
 import Container from '../../../../../components/container/Container';
 
 export default function Section(Data) {
-  const { language } = useContext(LanguageContext);
+  // const { language } = useContext(LanguageContext);
 
 
 

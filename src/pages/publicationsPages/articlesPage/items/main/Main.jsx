@@ -16,6 +16,7 @@ export default function Main() {
   const pathSegments = location.pathname.split('/').filter(Boolean);
   const sectionName = pathSegments[1]; // "articles" для /ru/articles/grgegrgr-1
 
+  
 
    function getLanguageText() {
     const data = [

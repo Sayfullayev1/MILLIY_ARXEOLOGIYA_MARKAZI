@@ -14,9 +14,15 @@ export default function Section() {
 
   const api = getApiUrl();
 
+
+  const location = useLocation();
+  const lastSegment = location.pathname.split('/').filter(Boolean).pop();
+
+
   useEffect(() => {
-    axios.get(`${api}/api/articles/get-published-count`)
+    axios.get(`${api}/api/${lastSegment}/get-published-count`)
       .then((response) => {
+        console.log('Общее количество опубликованных данных:', response.data.total);
         setNewsListDataLength(response.data.total);
       })
       .catch((error) => {
@@ -24,10 +30,9 @@ export default function Section() {
       });
   }, []);
 
-  const location = useLocation();
-  const lastSegment = location.pathname.split('/').filter(Boolean).pop();
   
-  
+  // console.log(`${api}/api/${lastSegment}/get-item`);
+    
 
   useEffect(() => {
     const fetchGalleryItems = async () => {

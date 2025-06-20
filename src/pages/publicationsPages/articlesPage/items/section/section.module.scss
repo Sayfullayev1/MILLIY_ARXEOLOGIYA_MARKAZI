@@ -1,108 +1,169 @@
 .container {
+  padding: 40px 0;
+  font-family: 'Roboto', sans-serif;
+  background: #f7f9fb;
 }
 
-.section {
-}
-
-.newsCardsList {
+.cardContainer {
   display: flex;
   flex-direction: column;
   gap: 32px;
-  margin: 32px 0;
 }
 
 .newsCard {
   display: flex;
+  flex-direction: row;
   align-items: stretch;
   background: #fff;
   border-radius: 18px;
-  box-shadow: 0 4px 32px rgba(0,0,0,0.09);
-  text-decoration: none;
-  color: inherit;
+  box-shadow: 0 4px 24px 0 rgba(30, 42, 73, 0.10);
   overflow: hidden;
   transition: box-shadow 0.2s, transform 0.2s;
-  min-height: 180px;
+  position: relative;
+
   &:hover {
-    box-shadow: 0 8px 40px rgba(0,0,0,0.16);
-    transform: translateY(-1px) scale(1.001);
+    box-shadow: 0 8px 32px 0 rgba(30, 42, 73, 0.18);
   }
 }
 
-.newsCardImgWrap {
-  flex: 0 0 260px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #f7f7f7;
-}
-
-.newsCardImg {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 0;
+.newsCard_link {
+  text-decoration: none;
+  color: inherit;
   display: block;
 }
 
-.newsCardBody {
+.newsCard_imageWrapper {
+  width: 260px;
+  min-width: 200px;
+  height: 180px;
+  background: linear-gradient(135deg, #e3e9f3 0%, #f7f9fb 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 18px 0 0 18px;
+}
+
+.newsCard_image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 18px 0 0 18px;
+  transition: transform 0.3s;
+}
+
+.newsCard:hover .newsCard_image {
+  transform: scale(1.06);
+}
+
+.newsCard_content {
   flex: 1;
-  padding: 28px 32px 28px 32px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding: 28px 36px 28px 32px;
+  background: #fff;
+  border-radius: 0 18px 18px 0;
+  min-width: 0;
 }
 
-// Если нет изображения — body занимает всю ширину
-.newsCard:not(:has(.newsCardImgWrap)) .newsCardBody {
-  padding-left: 32px;
-  padding-right: 32px;
-}
-
-.newsCardMeta {
-  font-size: 14px;
+.newsCard_data {
+  font-size: 1.02rem;
   color: #000000;
-  margin-bottom: 8px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  letter-spacing: 0.01em;
   display: flex;
-  gap: 5px;
   align-items: center;
-
-  &>span{
-    font-weight: 600;
-    color: #313131;
-  }
+  gap: 7px;
 }
 
-.newsCardDate {
-  font-size: 14px;
-  color: #888;
-}
-
-.newsCardTitle {
-  font-size: 1.35rem;
-  font-weight: 700;
+.newsCard_title {
+  font-size: 1.1rem;
+  color: #3f3f3f;
   margin: 0 0 10px 0;
-  color: #2d2d2d;
-  line-height: 1.2;
+  font-weight: 700;
+  line-height: 1.25;
+  transition: color 0.18s;
+  word-break: break-word;
 }
 
-.newsCardDesc {
-  font-size: 1.08rem;
-  color: #444;
-  margin-bottom: 0;
+.newsCard_link:hover .newsCard_title {
+  color: #1976d2;
+}
+
+@media (max-width: 900px) {
+  .newsCard_content {
+    padding: 18px 16px 18px 16px;
+  }
+  .newsCard_imageWrapper {
+    width: 150px;
+    min-width: 100px;
+    height: 120px;
+  }
 }
 
 @media (max-width: 700px) {
   .newsCard {
     flex-direction: column;
-    min-height: unset;
+    border-radius: 16px;
   }
-  .newsCardImgWrap {
-    flex: none;
+  .newsCard_imageWrapper,
+  .newsCard_image {
+    width: 100%;
+    min-width: 0;
+    height: 180px;
+    border-radius: 16px 16px 0 0;
   }
-  .newsCardImg {
-    height: 160px;
+  .newsCard_content {
+    border-radius: 0 0 16px 16px;
+    padding: 14px 12px;
   }
-  .newsCardBody {
-    padding: 18px 16px;
+}
+
+.galleryPagination {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 32px 0 12px 0;
+}
+
+.galleryPageBtn {
+  background: #f4f6fa;
+  border: 1px solid #cfd8dc;
+  color: #1976d2;
+  border-radius: 7px;
+  padding: 7px 16px;
+  font-size: 1.08rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.16s, color 0.16s, border 0.16s;
+  outline: none;
+}
+
+.galleryPageBtn.active,
+.galleryPageBtn:hover {
+  background: #1976d2;
+  color: #fff;
+  border: 1.5px solid #1976d2;
+}
+
+/* Адаптивность для более широких экранов */
+@media (min-width: 480px) {
+  .cardContainer {
+    grid-template-columns: 1fr 1fr; /* Сетку с двумя колонками на средних экранах */
+  }
+}
+
+@media (min-width: 768px) {
+  .cardContainer {
+    grid-template-columns: 1fr 1fr 1fr; /* Три колонки на более широких экранах */
+  }
+}
+
+@media (min-width: 1000px) {
+  .cardContainer {
+    grid-template-columns: 1fr 1fr 1fr 1fr; /* Четыре колонки на экранах 1000px и выше */
   }
 }

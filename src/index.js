@@ -44,6 +44,7 @@ import UzbekistanHistoryOfMaterialCulturePage from './pages/publicationsPages/uz
 /* News Page*/
 
 import ArticlesPage from './pages/publicationsPages/articlesPage/ArticlesPage';
+import ArticlesDetailPage from './pages/publicationsPages/articlesDetailPage/ArticlesDetailPage';
 import NewsPage from './pages/newsPages/newsPage/NewsPage';
 import NewsDetailPage from './pages/newsPages/newsDetailPage/NewsDetailPage';
 import PhotoGalleryPage from './pages/newsPages/photoGalleryPage/PhotoGalleryPage';
@@ -64,6 +65,7 @@ import BoardOfYoungScientistsPage from './pages/activityPages/boardOfYoungScient
 
 /* Contacts Page*/ 
 import ContactsPage from './pages/contactsPage/ContactsPage';
+
 
 
 
@@ -121,6 +123,8 @@ root.render(
 
             <Route path='/:lang?/articles' element={<ArticlesPage/>}/>
 
+            <Route path='/:lang?/articles/:id' element={<ArticlesDetailPage />} />
+
             <Route path='/:lang?/teaching-aids' element={<TeachingAidsPage/>}/>
 
             <Route path='/:lang?/uzbekistan-history-of-material-culture' element={<UzbekistanHistoryOfMaterialCulturePage/>}/>
@@ -146,12 +150,18 @@ root.render(
               {/* News Page */}
 
               <Route path="/:lang?/news" element={<NewsPage />} />
-
-
               <Route path="/:lang?/news/:id" element={<NewsDetailPage />} />
 
-              <Route path="/:lang?/photo-gallery" element={<PhotoGalleryPage />} />
+              <Route path="/:lang?/ads" element={<ArticlesPage />} />
+              <Route path="/:lang?/ads/:id" element={<ArticlesDetailPage />} />
 
+              <Route path="/:lang?/events" element={<ArticlesPage />} />
+              <Route path="/:lang?/events/:id" element={<ArticlesDetailPage />} />
+
+              <Route path="/:lang?/wednesday-readings" element={<ArticlesPage />} />
+              <Route path="/:lang?/wednesday-readings/:id" element={<ArticlesDetailPage/>} />
+
+              <Route path="/:lang?/photo-gallery" element={<PhotoGalleryPage />} />
               <Route path="/:lang?/photo-gallery/:id" element={<PhotoGalleryDetailPage />} />
 
 

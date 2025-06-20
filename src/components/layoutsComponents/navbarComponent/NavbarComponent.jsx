@@ -267,6 +267,16 @@ export default function NavbarComponent() {
           },
           {
             Name: {
+              uz: "Chorshanba o'qishlari",
+              ru: "Чтения по средам",
+              en: "Wednesday-readings",
+            },
+            link: "/wednesday-readings",
+
+            extendedItems: ""
+          },
+          {
+            Name: {
               uz: "Fotogalereya",
               ru: "Фотогалерея",
               en: "Photo Gallery",

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './main.scss';
 
 import Category from '../../../../../components/category/Category';
@@ -7,62 +7,56 @@ import Section from '../section/Section';
 import { LanguageContext } from '../../../../../context/LanguageContext';
 import Container from '../../../../../components/container/Container';
 
+
+import { useLocation, useParams } from 'react-router-dom';
+
 export default function Main() {
-  
-  const newsData = [
+
+  const location = useLocation();
+  const pathSegments = location.pathname.split('/').filter(Boolean);
+  const sectionName = pathSegments[1]; // "articles" для /ru/articles/grgegrgr-1
+
+
+   function getLanguageText() {
+    const data = [
       {
-        id: 1,
-        title: 'Новость 1',
-        description: 'Краткое описание новости 1.',
-        date: '2023-10-01',
-        image: 'https://picsum.photos/300/180?random=1',
-        link: '/news/1',
+        Name: {
+          uz: "Maqolalar",
+          ru: "Статьи",
+          en: "Articles",
+        },
+        link: "articles",
       },
       {
-        id: 2,
-        title: 'Новость 2',
-        description: 'Краткое описание новости 2.',
-        date: '2023-10-02',
-        image: 'https://picsum.photos/300/180?random=2',
-        link: '/news/2',
+        Name: {
+          uz: "E'lonlar",
+          ru: "Обьявления",
+          en: "Ads",
+        },
+        link: "ads",
       },
       {
-        id: 3,
-        title: 'Новость 3',
-        description: 'Краткое описание новости 3.',
-        date: '2023-10-03',
-        image: 'https://picsum.photos/300/180?random=3',
-        link: '/news/3',
+        Name: {
+          uz: "Tadbirlar",
+          ru: "События",
+          en: "Events",
+        },
+        link: "events",
       },
       {
-        id: 4,
-        title: 'Новость 4',
-        description: 'Краткое описание новости 4.',
-        date: '2023-10-04',
-        image: 'https://picsum.photos/300/180?random=4',
-        link: '/news/4',
-      },
-      {
-        id: 5,
-        title: 'Новость 5',
-        description: 'Краткое описание новости 5.',
-        date: '2023-10-05',
-        image: 'https://picsum.photos/300/180?random=5',
-        link: '/news/5',
-      },
-      {
-        id: 6,
-        title: 'Новость 6',
-        description: 'Краткое описание новости 6.',
-        date: '2023-10-06',
-        image: 'https://picsum.photos/300/180?random=6',
-        link: '/news/6',
+        Name: {
+          uz: "Chorshanba o'qishlari",
+          ru: "Чтения по средам",
+          en: "Wednesday-readings",
+        },
+        link: "wednesday-readings",
       },
     ];
-  
-    
 
-  const { language } = React.useContext(LanguageContext);
+    // Получаем sectionName из текущего пути
+    return data.find(item => item.link === sectionName) || data[0];
+  }
+  
 
   const menuData = [
     {
@@ -75,9 +69,9 @@ export default function Main() {
     },
     {
       text: {
-        uz: "Maqolalar",
-        ru: "Статьи",
-        en: "Articles",
+        uz: getLanguageText().Name['uz'],
+        ru: getLanguageText().Name['ru'],
+        en: getLanguageText().Name['en'],
       },
       link: ``,
     },
@@ -91,7 +85,7 @@ export default function Main() {
       <Category data={menuData} />
 
       <Container>
-        <Section newsData = {newsData}/>
+        <Section/>
       </Container>
       
     </main>

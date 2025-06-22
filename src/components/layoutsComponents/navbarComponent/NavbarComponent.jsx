@@ -38,7 +38,7 @@ export default function NavbarComponent() {
       },
       {
         Name: {
-          uz: "BIZ TO'G'RIMIZDA",
+          uz: "Biz to'g'rimizda",
           ru: "О нас",
           en: "About us",
         },

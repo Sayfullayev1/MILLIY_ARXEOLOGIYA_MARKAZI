@@ -18,6 +18,8 @@ export default function Section() {
   const location = useLocation();
   const lastSegment = location.pathname.split('/').filter(Boolean).pop();
 
+  console.log(`${api}/api/${lastSegment}/get-published-count`);
+  
 
   useEffect(() => {
     axios.get(`${api}/api/${lastSegment}/get-published-count`)
@@ -28,7 +30,7 @@ export default function Section() {
       .catch((error) => {
         console.error('Ошибка при получении данных:', error);
       });
-  }, []);
+  }, [lastSegment]);
 
   
   // console.log(`${api}/api/${lastSegment}/get-item`);
@@ -51,7 +53,7 @@ export default function Section() {
     };
 
     fetchGalleryItems();
-  }, [newsListDataLength, numOfTheData]);
+  }, [newsListDataLength, numOfTheData, lastSegment]);
 
   function formatDate(dateStr) {
     if (!dateStr) return '';

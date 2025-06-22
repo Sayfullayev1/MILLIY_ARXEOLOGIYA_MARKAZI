@@ -33,7 +33,7 @@ export default function Section() {
       axios.post(`${api}/api/news/get-item`, { page: numOfTheData })
         .then(response => {
           if (response.data.success) {
-            console.log('Полученные элементы галереи:', response.data.data);
+            // console.log('Полученные элементы галереи:', response.data.data);
             setNewsListData(response.data.data);
           } else {
             console.error('Ошибка при получении элементов галереи:', response.data.message);

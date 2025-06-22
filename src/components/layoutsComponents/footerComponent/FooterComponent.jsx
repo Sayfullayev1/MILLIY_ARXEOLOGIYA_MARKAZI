@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './footerComponent.scss';
 
+import { LanguageContext } from '../../../context/LanguageContext';
+
 export default function FooterComponent() {
+
+  const { language } = useContext(LanguageContext);
 
 
   const links = [

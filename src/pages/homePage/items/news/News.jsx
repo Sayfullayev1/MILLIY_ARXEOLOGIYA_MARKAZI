@@ -109,25 +109,32 @@ export default function News() {
 
 
     useEffect(() => {
-        let result = [];
+        const result = [];
         let n = 0, a = 0, e = 0;
-        while (result.length < 12 && (news.length > n || ads.length > a || events.length > e)) {
-            // 5 news
-            for (let i = 0; i < 5 && n < news.length && result.length < 12; i++) {
-                result.push(news[n++]);
-            }
-            // 2 ads
-            for (let i = 0; i < 2 && a < ads.length && result.length < 12; i++) {
-                result.push(ads[a++]);
-            }
-            // 1 event
-            if (e < events.length && result.length < 12) {
-                result.push(events[e++]);
-            }
+        const maxItems = 12;
+          
+        const getRandomType = () => {
+          const rand = Math.random();
+          if (rand < 0.6) return 'news';      // 60%
+          else if (rand < 0.85) return 'ads'; // 25%
+          else return 'event';                // 15%
+        };
+      
+        while (result.length < maxItems && (n < news.length || a < ads.length || e < events.length)) {
+          const type = getRandomType();
+        
+          if (type === 'news' && n < news.length) {
+            result.push(news[n++]);
+          } else if (type === 'ads' && a < ads.length) {
+            result.push(ads[a++]);
+          } else if (type === 'event' && e < events.length) {
+            result.push(events[e++]);
+          }
+          // Если выбранный тип закончился, просто попробуем снова на следующей итерации
         }
+      
         setNewsListData(result);
         console.log(result);
-        
     }, [news, ads, events]);
 
 

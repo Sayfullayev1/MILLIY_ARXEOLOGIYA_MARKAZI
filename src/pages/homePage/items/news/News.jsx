@@ -111,6 +111,7 @@ export default function News() {
     useEffect(() => {
         const result = [];
         let n = 0, a = 0, e = 0;
+
         const maxItems = 12;
           
         const getRandomType = () => {
@@ -134,7 +135,7 @@ export default function News() {
         }
       
         setNewsListData(result);
-        console.log(result);
+        // console.log(result);
     }, [news, ads, events]);
 
 

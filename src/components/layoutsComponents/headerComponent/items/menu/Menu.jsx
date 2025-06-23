@@ -53,7 +53,7 @@ function Menu( toggleMenu ) {
               ru: "История центра",
               en: "History of the center",
             },
-            link: "/markaz-tarixi",
+            link: "/history-of-the-center",
             extendedItems: ""
           },
           {

@@ -93,7 +93,7 @@ root.render(
 
             {/* About Pages*/}
 
-            <Route path="/:lang?/markaz-tarixi" element={<HistoryOfTheCenterPage />} />
+            <Route path="/:lang?/history-of-the-center" element={<HistoryOfTheCenterPage />} />
 
 
               {/* Departments and Laboratories Pages*/}

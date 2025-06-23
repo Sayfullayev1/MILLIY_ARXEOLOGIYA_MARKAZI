@@ -80,7 +80,15 @@ export default function Main() {
 
         <div className='home-page__main__news__wrapper'>
 
-            <h1>Yahdiliklar</h1>
+            <h1>
+                {
+                    language === "uz"
+                        ? "Yahdiliklar"
+                        : language === "ru"
+                        ? "Новости"
+                        : "News"
+                }
+            </h1>
 
             <News/>
         </div>

@@ -1,6 +1,19 @@
 .home-page__news__item {
     margin: 25px 0;    
-    // cursor: pointer;
+    box-shadow: 0 2px 12px 0 rgba(0,0,0,0.08);
+    border-radius: 6px;
+    overflow: hidden;
+    background: #fff;
+    transition: box-shadow 0.2s;
+
+    &:hover {
+      box-shadow: 0 4px 18px 0 rgba(0,0,0,0.13);
+    }
+
+
+    &__content{
+      padding: 0 15px 15px  15px;
+    }
 
 
     &__img-wrapper {

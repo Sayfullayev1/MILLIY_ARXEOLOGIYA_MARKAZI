@@ -160,19 +160,24 @@ export default function News() {
                         </div>
                     </Link>
 
-                    <div className='home-page__news__item__type_link'>
-                        <Link to={item.typeof}>
-                            {
-                                item.tupe[language]
-                            }
-                        </Link>
-                    </div>
+                    <div className='home-page__news__item__content'>
 
-                    <p className='home-page__news__item__data'> <i className="fa-regular fa-calendar-days"></i>  {formatDate(item.date)}</p>
+                        <div className='home-page__news__item__type_link'>
+                            <Link to={item.typeof}>
+                                {
+                                    item.tupe[language]
+                                }
+                            </Link>
+                        </div>
+
+                        <p className='home-page__news__item__data'> <i className="fa-regular fa-calendar-days"></i>  {formatDate(item.date)}</p>
+                            
+                        <Link className='home-page__news__item__link' to={`${item.typeof}/${item.link}`}>
+                            <h1 className='home-page__news__item__title'>{item.title[language]}</h1>
+                        </Link>
+
+                    </div>
                     
-                    <Link className='home-page__news__item__link' to={`${item.typeof}/${item.link}`}>
-                        <h1 className='home-page__news__item__title'>{item.title[language]}</h1>
-                    </Link>
                 </div>
             ))
         }

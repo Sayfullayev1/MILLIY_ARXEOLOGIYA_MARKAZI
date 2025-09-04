@@ -47,6 +47,11 @@
     }
 }
 
+.home-page__news{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 5%;
+    }
 
 
 @media (min-width: 800px) {

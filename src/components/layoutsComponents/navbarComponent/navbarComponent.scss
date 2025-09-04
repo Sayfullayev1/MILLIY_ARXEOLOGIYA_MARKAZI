@@ -16,7 +16,9 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        background-color: #086f36;
+        // background-color: #086f36;
+        // background-color: #0a8f3e;
+        // background-color: #f08503;
       }
 
 
@@ -49,7 +51,8 @@
           left: -10%;
           width: 120%;
           height: 3px;
-          background-color: #337ab7; // Цвет линии
+          // background-color: #337ab7; // Цвет линии
+          background-color: #c2a503;
         }
 
         &__link{
@@ -153,7 +156,9 @@
   
   .navbar {
     width: 100%;
-    background-color: #086f36;
+    // background-color: #086f36;
+    // background-color: #a26701;
+    background-color: #bf6205;
 
 
     &__container{

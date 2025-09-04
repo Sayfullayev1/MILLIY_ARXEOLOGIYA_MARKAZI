@@ -32,7 +32,12 @@ export default function Info() {
                 <h1>
                     {language === 'uz' ? 'Ish vaqti' : language === 'ru' ? 'Время работы' : 'Working hours'}
                 </h1>
-                <span>Dsh - Jum: 09:00 - 18:00</span>
+                <span>
+                    {
+                        language === 'uz' ? 'Du - Jum: ' : language === 'ru' ? 'Пн - Пт: ' : 'Mon - Fri: '
+                    }
+                    09:00 - 18:00
+                </span>
             </div>
         </div>
 

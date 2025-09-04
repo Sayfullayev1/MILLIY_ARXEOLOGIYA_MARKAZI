@@ -20,7 +20,7 @@ export default function Info() {
                     <h1>
                         {language === 'uz' ? 'Biz bilan bog\'laning' : language === 'ru' ? 'Свяжитесь с нами' : 'Contact us '}
                     </h1>
-                <span>(+998 71) 262-37-95</span>
+                <span>(+998 71) 262-64-62</span>
             </div>
         </div>
 

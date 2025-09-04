@@ -77,21 +77,31 @@ export default function Section() {
             title: "O‘zbekiston Respublikasi Fanlar akademiyasi",
             link: "www.academy.uz",
         },
+        // {
+        //     icon: <img src="https://botany.uz/wp-content/uploads/2018/04/1490955535logo_uz.png" alt="Icon 4" />,
+        //     title: "O‘zbekiston Respublikasining Hukumat portali",
+        //     link: "www.gov.uz",
+        // },
+        // {
+        //     icon: <img src="https://botany.uz/wp-content/uploads/2018/04/1473337031usefull1-1.png" alt="Icon 5" />,
+        //     title: "2017-2021 yillarda O‘zbekiston Respublikasi rivojlanishining beshta ustuvor yo‘nalishidagi harakat strategiyasi",
+        //     link: "strategy.gov.uz",
+        // },
+        // {
+        //     icon: <img src="https://botany.uz/wp-content/uploads/2018/04/1473339784usefull6-1.png" alt="Icon 6" />,
+        //     title: "O‘zbekiston Respublikasining ochiq axborot portali",
+        //     link: "data.gov.uz",
+        // },
         {
-            icon: <img src="https://botany.uz/wp-content/uploads/2018/04/1490955535logo_uz.png" alt="Icon 4" />,
-            title: "O‘zbekiston Respublikasining Hukumat portali",
-            link: "www.gov.uz",
+            icon: <img src="https://www.arxeologiya.uz/wp-content/uploads/2024/04/newlogo.jpg" alt="Icon 6" />,
+            title: "",
+            link: "arxeologiya.uz",
         },
         {
-            icon: <img src="https://botany.uz/wp-content/uploads/2018/04/1473337031usefull1-1.png" alt="Icon 5" />,
-            title: "2017-2021 yillarda O‘zbekiston Respublikasi rivojlanishining beshta ustuvor yo‘nalishidagi harakat strategiyasi",
-            link: "strategy.gov.uz",
-        },
-        {
-            icon: <img src="https://botany.uz/wp-content/uploads/2018/04/1473339784usefull6-1.png" alt="Icon 6" />,
-            title: "O‘zbekiston Respublikasining ochiq axborot portali",
-            link: "data.gov.uz",
-        },
+            icon: <img src="https://my.madaniymeros.uz/img/main.png" alt="Icon 6" />,
+            title: "Samarqand Arxeologiya Instituti",
+            link: "my.madaniymeros.uz"
+        }
     ];
 
     return (

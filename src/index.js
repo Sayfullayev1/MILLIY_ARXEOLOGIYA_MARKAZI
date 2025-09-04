@@ -8,6 +8,9 @@ import { LanguageProvider } from './context/LanguageContext';
 
 
 
+import ScrollToTop from './components/scrollToTop/ScrollToTop';
+
+
 /* Home Page*/
 import HomePage from './pages/homePage/HomePage';
 
@@ -75,12 +78,16 @@ import ContactsPage from './pages/contactsPage/ContactsPage';
 
 
 
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   //<React.StrictMode>
     <BrowserRouter>
 
       <LanguageProvider>
+
+
+        <ScrollToTop />
 
         <Routes>
 

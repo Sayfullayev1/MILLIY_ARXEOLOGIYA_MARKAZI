@@ -10,7 +10,7 @@ function Menu( toggleMenu ) {
   const location = useLocation();
   const { language, changeLanguage } = useContext(LanguageContext);
   const navigate = useNavigate();
-  const [pressIndex , setPressIndex] = useState(null);
+  const [pressIndex ] = useState(null);
   const [openSubIndex, setOpenSubIndex] = useState(null);
   const [openExtendedIndex, setOpenExtendedIndex] = useState({}); // { [parentIndex]: extendedIndex }
 

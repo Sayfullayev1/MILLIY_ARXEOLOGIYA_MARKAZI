@@ -6,7 +6,6 @@ import 'react-photo-view/dist/react-photo-view.css';
 
 export default function Section({ galleryData }) {
   const { language } = useContext(LanguageContext);
-  const [mainOpen, setMainOpen] = useState(false);
 
   // Форматировать дату
   function formatDate(dateStr) {

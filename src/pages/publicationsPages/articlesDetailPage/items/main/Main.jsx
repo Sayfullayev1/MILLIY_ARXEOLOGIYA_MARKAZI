@@ -18,7 +18,6 @@ export default function Main() {
   const location = useLocation();
   const currentPath = location.pathname;
   const [newsData, setNewsData] = useState(null);
-  const [newsDataList, setNewsDataList] = useState(null);
   
   // Получить "articles" из пути /ru/articles/grgegrgr-1
   const pathSegments = location.pathname.split('/').filter(Boolean);
@@ -58,14 +57,13 @@ export default function Main() {
     // Передаем excludeIndex для исключения текущей новости из списка
     axios.post(`${api}/api/${sectionName}/get-item-list`, { excludeIndex: Number(apiId) })
       .then(res => {
-        setNewsDataList(res.data.data);
         // console.log("News list data fetched successfully:", res.data.data);
         
       })
       .catch(err => {
         console.error("Error fetching news list data:", err);
       });
-  }, [id, location], );
+  }, [id, sectionName]);
 
 
 

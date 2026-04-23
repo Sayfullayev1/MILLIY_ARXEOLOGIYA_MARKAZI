@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import styles from './section.module.scss'; // Убедитесь, что файл section.module.scss существует
 
 export default function Section(news) {

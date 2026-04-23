@@ -16,18 +16,17 @@ export default function Carousel() {
     // 'https://botany.uz/wp-content/uploads/2021/08/Acantholimon_litvinovii.jpg',
   ];
 
-  const nextSlide = () => {
-    setIndex((prev) => (prev + 1) % images.length);
-  };
-
   const goToSlide = (i) => {
     setIndex(i);
   };
 
   useEffect(() => {
+    const nextSlide = () => {
+      setIndex((prev) => (prev + 1) % images.length);
+    };
     const interval = setInterval(nextSlide, 8000);
     return () => clearInterval(interval);
-  }, []);
+  }, [images.length]);
 
   return (
     <div className="home-page__carousel">

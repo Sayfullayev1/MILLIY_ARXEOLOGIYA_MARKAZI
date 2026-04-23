@@ -1,44 +1,8 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import './footerComponent.scss';
-
-import { LanguageContext } from '../../../context/LanguageContext';
 
 export default function FooterComponent() {
 
-  const { language } = useContext(LanguageContext);
-
-
-  const links = [
-    {
-      href: "https://botany.uz/uz/category/science_ads/",
-      text: "Dissertatsiya himoyalari va avtoreferatlar",
-      multiline: true,
-    },
-    {
-      href: "https://botany.uz/uz/category/lab/goel/",
-      text: "Geobotanika laboratoriyasi",
-    },
-    {
-      href: "https://botany.uz/uz/category/lab/lmfb/",
-      text: "Molekulyar filogeniya va biogeografiya laboratoriyasi",
-      multiline: true,
-    },
-    {
-      href: "https://botany.uz/uz/category/lab/lfu/",
-      text: "O'zbekiston florasi laboratoriyasi",
-    },
-    {
-      href: "https://botany.uz/uz/category/lab/lma/",
-      text: "Mikologiya va algologiya laboratoriyasi",
-    },
-  ];
-  
-  // Data for bottom navigation
-  const bottomNavLinks = [
-    { text: "Bosh sahifa", href: null },
-    { text: "Biz haqimizda", href: "https://botany.uz/uz/about/" },
-    { text: "Aloqa", href: "https://botany.uz/uz/contacts/" },
-  ];
 
   
   return (

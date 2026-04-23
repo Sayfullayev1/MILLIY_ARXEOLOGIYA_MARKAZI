@@ -1,9 +1,8 @@
-import React, { use, useContext, useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import './news.scss'
 
 import { LanguageContext } from '../../../../context/LanguageContext';
-import { Await, Link } from 'react-router-dom';
-
+import { Link } from 'react-router-dom';
 
 import axios from 'axios';
 import getApiUrl from '../../../../api/api';
@@ -18,7 +17,15 @@ export default function News() {
     const [events, setEvents] = useState([]);
     
 
-    const dataType = [
+
+
+    const { language } = useContext(LanguageContext);
+
+
+    useEffect(() => {
+        const api = getApiUrl();
+
+        const dataType = [
             {
                 title: {
                     uz: "Yangiliklar",
@@ -44,13 +51,6 @@ export default function News() {
                 link: '/events',
             }
         ]
-
-
-    const { language } = useContext(LanguageContext);
-
-
-    useEffect(() => {
-        const api = getApiUrl();
 
         for (let index = 0; index < dataType.length; index++) {
             async function fetchAll() {

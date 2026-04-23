@@ -1,13 +1,12 @@
-import React, { useEffect, useState, useContext } from 'react';
+import React, { useEffect, useState, useContext, useRef } from 'react';
 import './menu.scss';
-import Topbar from '../topbar/Topbar';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { LanguageContext } from '../../../../../context/LanguageContext';
 
 function Menu( toggleMenu ) {
 
   const [menuOpen, setMenuOpen] = useState("");
-  const [i, setI] = useState(0);
+  const isFirstRender = useRef(true);
   const location = useLocation();
   const { language, changeLanguage } = useContext(LanguageContext);
   const navigate = useNavigate();
@@ -17,15 +16,14 @@ function Menu( toggleMenu ) {
 
   
   useEffect(() => {
-
-    if (i > 0) {
+    if (!isFirstRender.current) {
       if (!toggleMenu?.Bedeutung) {   
         setMenuOpen("menu-item__inactive");
       } else if (toggleMenu?.Bedeutung) {
         setMenuOpen("menu-item__active");
       }
     }
-    setI(i+1);
+    isFirstRender.current = false;
   }, [toggleMenu?.Bedeutung]);
 
 
@@ -323,10 +321,6 @@ function Menu( toggleMenu ) {
     
   };
   
-  function viewPage(index) {
-    setPressIndex(index);
-  }
-
   function handleSubmenuToggle(index) {
     setOpenSubIndex(openSubIndex === index ? null : index);
     setOpenExtendedIndex({}); // Закрыть все вложние при смене основного
@@ -353,6 +347,7 @@ function Menu( toggleMenu ) {
               return (
                 <li key={index} className='menu-item__list__item'>
                   <a
+                    href="#!"
                     onClick={() => handleSubmenuToggle(index)}
                     className='menu-item__list__item__link'
                     style={{ cursor: "pointer" }}
@@ -369,6 +364,7 @@ function Menu( toggleMenu ) {
                           return (
                             <li key={subIndex} className='menu-item__list__item__extended__item'>
                               <a
+                                href="#!"
                                 onClick={e => { e.stopPropagation(); handleExtendedToggle(index, subIndex); }}
                                 className='menu-item__list__item__extended__item__link'
                                 style={{ cursor: "pointer" }}

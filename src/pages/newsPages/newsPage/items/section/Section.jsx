@@ -23,7 +23,7 @@ export default function Section() {
       .catch((error) => {
         console.error('Ошибка при получении данных:', error);
       });
-  }, []);
+  }, [api]);
 
 
 
@@ -45,7 +45,7 @@ export default function Section() {
     };
 
     fetchGalleryItems();
-  }, [newsListDataLength, numOfTheData]);
+  }, [newsListDataLength, numOfTheData, api]);
 
   
   function formatDate(dateStr) {

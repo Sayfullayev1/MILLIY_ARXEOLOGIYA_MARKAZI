@@ -1,4 +1,4 @@
-import React, { use, useContext, useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import "./interdisciplinaryResearchPage.scss"
 import { LanguageContext } from '../../../../context/LanguageContext';
 

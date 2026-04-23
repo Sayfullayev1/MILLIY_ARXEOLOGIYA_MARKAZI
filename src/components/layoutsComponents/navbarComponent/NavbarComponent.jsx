@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState, useRef } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useNavigate, useLocation, Link } from 'react-router-dom';
 import './navbarComponent.scss';
 import { LanguageContext } from '../../../context/LanguageContext';
@@ -8,8 +8,6 @@ export default function NavbarComponent() {
   const navigate = useNavigate();
   const location = useLocation();
   const { language } = useContext(LanguageContext);
-  const [isSearchOpen, setIsSearchOpen] = useState(false);
-  const [searchQuery, setSearchQuery] = useState('');
   const [openSubmenuIndex, setOpenSubmenuIndex] = useState(null); // Состояние для управления открытием подменю
 
   useEffect(() => {
@@ -17,14 +15,6 @@ export default function NavbarComponent() {
       navigate('/uz'); // Default language can be set to 'en'
     }
   }, [location, navigate]);
-
-  const handleSearch = () => {
-    if (searchQuery.trim() === '') {
-      setIsSearchOpen(false);
-    } else {
-      // console.log('Search query:', searchQuery); // Placeholder for search logic
-    }
-  };
 
   let data = [  
       {

@@ -52,7 +52,7 @@ export default function TeachingAidsPage() {
                 // Handle the error
                 console.error('There was an error fetching the documents!', error);
             });
-    }, [])
+    }, [api])
     
   return (
     <div className={style.container}>

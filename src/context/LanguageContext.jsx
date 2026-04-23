@@ -25,7 +25,7 @@ export const LanguageProvider = ({ children }) => {
       // Если в URL нет языка (например, просто /about), редиректим на сохраненный
       navigate(`/${language}${location.pathname}`);
     }
-  }, [location.pathname]);
+  }, [location.pathname, language, navigate]);
 
   const changeLanguage = (lang) => {
     if (lang !== language) {

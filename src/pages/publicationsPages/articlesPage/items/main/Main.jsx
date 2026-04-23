@@ -1,14 +1,13 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import './main.scss';
 
 import Category from '../../../../../components/category/Category';
 import Section from '../section/Section';
 
-import { LanguageContext } from '../../../../../context/LanguageContext';
 import Container from '../../../../../components/container/Container';
 
 
-import { useLocation, useParams } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
 export default function Main() {
 

@@ -62,7 +62,7 @@ export default function Section() {
     };
 
     fetchGalleryItems();
-  }, [photoGaleryLength, numOfTheData]);
+  }, [photoGaleryLength, numOfTheData, API_BASE_URL]);
   
 
   // Функция для форматирования даты в формат "дд-мм-гггг"

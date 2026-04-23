@@ -35,7 +35,7 @@ export default function MonographsPage() {
 
 
 
-    const [listOfDocuments, setListOfDocuments] = useState([])
+    const [listOfDocuments] = useState([])
 
     
 

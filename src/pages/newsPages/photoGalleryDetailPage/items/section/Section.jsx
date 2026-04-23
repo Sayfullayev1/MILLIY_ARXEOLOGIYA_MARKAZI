@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import styles from './section.module.scss';
 import { LanguageContext } from '../../../../../context/LanguageContext';
 import { PhotoProvider, PhotoView } from 'react-photo-view';

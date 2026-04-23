@@ -4,7 +4,7 @@ import './headerComponent.scss';
 import { LanguageContext } from '../../../context/LanguageContext';
 import { Link } from 'react-router-dom';
 
-import logoImage from '../../../public/images/logoImage/605db5a8b7a81.png';
+import logoImage from '../../../public/images/logoImage/BLACK-SQUARE-uncircled-squared.jpg';
 import Menu from './items/menu/Menu';
 import Topbar from './items/topbar/Topbar';
 import Info from './items/info/Info';
@@ -37,16 +37,16 @@ export default function HeaderComponent() {
 
   const LogoTitle = {
     uz: {
-      title: "O'zbekiston Respublikasi Fanlar akademiyasi",
-      subtitle: "MILLIY ARXEOLOGIYA MARKAZI",
+      title: "Antropologiya instituti",
+      subtitle: "O'zbekiston Respublikasi Fanlar akademiyasi"
     },
     ru: {
-      title: "Академия наук Республики Узбекистан",
-      subtitle: "НАЦИОНАЛЬНЫЙ ЦЕНТР АРХЕОЛОГИИ",
+      title: "Институт антропологии",
+      subtitle: "Академия наук Республики Узбекистан",
     },
     en: {
-      title: "Academy of Sciences of the Republic of Uzbekistan",
-      subtitle: "NATIONAL ARCHAEOLOGY CENTER",
+      title: "Institute of Anthropology",
+      subtitle: "Academy of Sciences of the Republic of Uzbekistan",
     },
   };
 

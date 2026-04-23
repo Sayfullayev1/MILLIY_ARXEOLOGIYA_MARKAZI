@@ -5,13 +5,13 @@ import { LanguageContext } from '../../../../../context/LanguageContext';
 
 
 
-import peopleImg1 from '../../../../../public/images/managementImages/image 1.svg';
-import peopleImg2 from '../../../../../public/images/managementImages/image 1 (1).svg';
-import peopleImg3 from '../../../../../public/images/managementImages/image 1 (2).svg';
+import peopleImg1 from '../../../../../public/images/managementImages/photo_2026-04-20_18-31-56.jpg';
+import peopleImg2 from '../../../../../public/images/managementImages/0003-КИТАЙ-3,3  .....jpg';
+import peopleImg3 from '../../../../../public/images/managementImages/image.png';
 import peopleImg4 from '../../../../../public/images/managementImages/image 1 (3).svg';
 import peopleImg5 from '../../../../../public/images/managementImages/image 1 (4).svg';
 import peopleImg6 from '../../../../../public/images/managementImages/image 1 (5).svg';
-import peopleImg7 from '../../../../../public/images/managementImages/image 1 (6).svg';
+import peopleImg7 from '../../../../../public/images/managementImages/photo_2026-04-20_18-13-34.jpg';
 import peopleImg8 from '../../../../../public/images/managementImages/image 1 (7).svg';
 import { Link } from 'react-router-dom';
 
@@ -29,7 +29,7 @@ export default function Main() {
         ru: 'Главная',
         en: 'Main',
       },
-      link: '/',
+      link: `/`,
     },
     {
       text: {
@@ -50,9 +50,9 @@ export default function Main() {
         en: "Maksudov Farhod",
       },
       job_title: {
-        uz: "Markaz Direktori",
-        ru: "Директор Центра",
-        en: "Director of the Center",
+        uz: "Direktor",
+        ru: "Директор",
+        en: "Director",
       },
       Contact: {
         uz: "Telefon: +9989-71 262-95-31 +998-71 262-64-62",
@@ -60,18 +60,18 @@ export default function Main() {
         en: "Phone: +9989-71 262-95-31 +998-71 262-64-62",
       },
       workTime: {
-        uz: "Ish vaqti: Dush-Juma 08-00 dan 11-00 gacha",
-        ru: "Время работы: Пн-Пт 08-00 до 11-00",
-        en: "Work time: Mon-Fri 08-00 to 11-00",
+        uz: "Ish vaqti: Dush-Juma 09-00 dan 18-00 gacha",
+        ru: "Время работы: Пн-Пт 09-00 до 18-00",
+        en: "Work time: Mon-Fri 09-00 to 18-00",
       },
-      email: "f.maqsudov@archaeology.uz",
+      email: "f.maqsudov@archaeology.uz; fmaksudov@gmail.com",
       img: peopleImg1,
     },
     {
       Name: {
-        uz: "Murodaliyev Raxmonali Xaydarali o‘g‘li",
-        ru: "Муродалийев Рахмонали",
-        en: "Murodaliyev Rakhmonali",
+        uz: "Raxmanov Zafar Odilovich",
+        ru: "Рахманов Зафар Одилович",
+        en: "Raxmanov Zafar Odilovich",
       },
       job_title: {
         uz: "Ilmiy ishlar bo’yicha direktor o’rinbosari",
@@ -84,18 +84,18 @@ export default function Main() {
         en: "Phone: +998-71-262-95-31 +998-71-262-95-31",
       },
       workTime: {
-        uz: "Ish vaqti: Dush-Juma 09-00 dan 17-00 gacha",
-        ru: "Время работы: Пн-Пт 09-00 до 17-00",
-        en: "Work time: Mon-Fri 09-00 to 17-00",
+        uz: "Ish vaqti: Dush-Juma 09-00 dan 18-00 gacha",
+        ru: "Время работы: Пн-Пт 09-00 до 18-00",
+        en: "Work time: Mon-Fri 09-00 to 18-00",
       },
-      email: "r.murodillayev@archaeology.uz",
+      email: "zafarraxmanov140@gmail.com; rahmaov.84@mail.ru",
       img: peopleImg2,
     },
     {
       Name: {
-        uz: "Murodova Durdonaxon Habibulloyevna ",
-        ru: "Муродова Дурдонахон Хабибуллоевна",
-        en: "Murodova Durdonax Habibulloyevna",
+        uz: "Adilov Jamshid Xasan o'g'li",
+        ru: "Адилов Джамшид Хасан угли",
+        en: "Adilov Jamshid Hasan ugli",
       },
       job_title: {
         uz: "Ilmiy kotib",
@@ -108,11 +108,11 @@ export default function Main() {
         en: "Phone: +998-71 262-52-36",
       },
       workTime: {
-        uz: "Ish vaqti: Dush-Juma 09-00 dan 17-00 gacha",
-        ru: "Время работы: Пн-Пт 09-00 до 17-00",
-        en: "Work time: Mon-Fri 09-00 to 17-00",
+        uz: "Ish vaqti: Dush-Juma 09-00 dan 18-00 gacha",
+        ru: "Время работы: Пн-Пт 09-00 до 18-00",
+        en: "Work time: Mon-Fri 09-00 to 18-00",
       },
-      email: "d.murodova@archaeology.uz",
+      email: "adilovjamshid2@gmail.com",
       img: peopleImg3,
     },
     {
@@ -132,9 +132,9 @@ export default function Main() {
         en: "Phone: +998-71 262-73-57",
       },
       workTime: {
-        uz: "Ish vaqti: Dush-Juma 09-00 dan 17-00 gacha",
-        ru: "Время работы: Пн-Пт 09-00 до 17-00",
-        en: "Work time: Mon-Fri 09-00 to 17-00",
+        uz: "Ish vaqti: Dush-Juma 09-00 dan 18-00 gacha",
+        ru: "Время работы: Пн-Пт 09-00 до 18-00",
+        en: "Work time: Mon-Fri 09-00 to 18-00",
       },
       email: "d.murodova@archaeology.uz",
 
@@ -157,9 +157,9 @@ export default function Main() {
         en: "Phone: +998-71 262-18-17",
       },
       workTime: {
-        uz: "Ish vaqti: Dush-Juma 09-00 dan 17-00 gacha",
-        ru: "Время работы: Пн-Пт 09-00 до 17-00",
-        en: "Work time: Mon-Fri 09-00 to 17-00",
+        uz: "Ish vaqti: Dush-Juma 09-00 dan 18-00 gacha",
+        ru: "Время работы: Пн-Пт 09-00 до 18-00",
+        en: "Work time: Mon-Fri 09-00 to 18-00",
       },
       email: "x.rahimov@archaeology.uz",
       img: peopleImg5,
@@ -181,18 +181,18 @@ export default function Main() {
         en: "Phone: +998-71 262-75-44",
       },
       workTime: {
-        uz: "Ish vaqti: Juma 09-00 dan 11-00 gacha",
-        ru: "Время работы: Пт 09-00 до 17-00",
-        en: "Work time: Fri 09-00 to 17-00",
+        uz: "Ish vaqti: Juma 09-00 dan 18-00 gacha",
+        ru: "Время работы: Пт 09-00 до 18-00",
+        en: "Work time: Fri 09-00 to 18-00",
       },
       email: "prudbreezr@mail.ru",
       img: peopleImg6,
     },
     {
       Name: {
-        uz: "Saliknazarova Nasiba",
-        ru: "Саликназарова Насиба",
-        en: "Saliknazarova Nasiba",
+        uz: "Jalilova Shaxnoza Korimboyevna",
+        ru: "Джалилова Шахноза Коримбоевична",
+        en: "Jalilova Shaxnoza Korimboyevna",
       },
       job_title: {
         uz: "Xodimlar bo`yicha inspektor",
@@ -205,11 +205,11 @@ export default function Main() {
         en: "Phone: +998-71 262-56-94",
       },
       workTime: {
-        uz: "Ish vaqti: Dush-Juma 09-00 dan 17-00 gacha",
-        ru: "Время работы: Пн-Пт 09-00 до 17-00",
-        en: "Work time: Mon-Fri 09-00 to 17-00",
+        uz: "Ish vaqti: Dush-Juma 09-00 dan 18-00 gacha",
+        ru: "Время работы: Пн-Пт 09-00 до 18-00",
+        en: "Work time: Mon-Fri 09-00 to 18-00",
       },
-      email: "s.nasiba@archaeology.uz",
+      email: "...",
       img: peopleImg7,
     },
     {
@@ -229,9 +229,9 @@ export default function Main() {
         en: "Phone: +998-99 531-50-34",
       },
       workTime: {
-        uz: "Ish vaqti: Dush-Juma 09-00 dan 17-00 gacha",
-        ru: "Время работы: Пн-Пт 09-00 до 17-00",
-        en: "Work time: Mon-Fri 09-00 to 17-00",
+        uz: "Ish vaqti: Dush-Juma 09-00 dan 18-00 gacha",
+        ru: "Время работы: Пн-Пт 09-00 до 18-00",
+        en: "Work time: Mon-Fri 09-00 to 18-00",
       },
       email: "murodillorahmonov@mail.ru",
       img: peopleImg8,

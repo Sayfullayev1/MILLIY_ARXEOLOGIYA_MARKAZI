@@ -46,9 +46,9 @@ export default function NavbarComponent() {
         items: [
           {
             Name: {
-              uz: "Markaz tarixi",
-              ru: "История центра",
-              en: "History of the center",
+              uz: "Institut tarixi",
+              ru: "История института",
+              en: "History of the institute",
             },
             link: "/history-of-the-center",
 
@@ -108,9 +108,9 @@ export default function NavbarComponent() {
           },
           {
             Name: {
-              uz: "Markaz ustavi",
-              ru: "Устав центра",
-              en: "Charter of the center",
+              uz: "Institut nizomi",
+              ru: "Устав института",
+              en: "Charter of the institute",
             },
             link: "/charter-of-the-center",
 
@@ -118,9 +118,9 @@ export default function NavbarComponent() {
           },
           {
             Name: {
-              uz: "Markaz academiklari",
-              ru: "Академики центра",
-              en: "Academics of the center",
+              uz: "Institut academiklari",
+              ru: "Академики института",
+              en: "Academics of the institute",
             },
             link: "/academics-of-the-center",
 

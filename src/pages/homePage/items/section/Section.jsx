@@ -73,7 +73,7 @@ export default function Section() {
             link: "my.gov.uz",
         },
         {
-            icon: <img src="https://botany.uz/wp-content/uploads/2018/04/1473403144usefull4.png" alt="Icon 3" />,
+            icon: <img src="https://www.academy.uz/dist/img/logo.png" alt="Icon 3" />,
             title: "O‘zbekiston Respublikasi Fanlar akademiyasi",
             link: "www.academy.uz",
         },

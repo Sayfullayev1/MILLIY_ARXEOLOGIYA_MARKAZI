@@ -29,34 +29,9 @@ export default function Topbar() {
 
     const handleLanguageChange = (lang, item) => {
         changeLanguage(lang);
-      
-        const pathParts = location.pathname.split("/");
-      
-        // Если в пути есть язык, заменяем его
-        // if (lang === "uz") {
-        //   // Если выбран узбекский, удаляем его из URL, если он есть
-        //   if (pathParts[1]?.match(/^[a-z]{2}$/)) {
-        //     pathParts.splice(1, 1); // Удаляем первый элемент (язык)
-        //   }
-        // } else {
-        //   // Если язык уже есть, заменяем его
-          if (pathParts[1]?.match(/^[a-z]{2}$/)) {
-            pathParts[1] = lang;
-          } else {
-            // Если языка нет, добавляем его
-            pathParts.splice(1, 0, lang);
-          }
-        // }
-      
-        const newPath = pathParts.join("/");
-        navigate(newPath);
-
-        // itme.target.classList.add('active-lang');
 
         item.target.style.color = '#2e2e2e';
         item.target.style.textDecoration = 'none';
-        
-
         
       };
 
@@ -71,8 +46,6 @@ export default function Topbar() {
 
             <h1 onClick={(e) => handleLanguageChange("uz",e) } >O`zbekcha</h1>
 
-            <h1 onClick={(e) => handleLanguageChange("ru",e) } >Русский</h1>
-            
             <h1 onClick={(e) => handleLanguageChange("en",e) } >English</h1>
 
         </div>

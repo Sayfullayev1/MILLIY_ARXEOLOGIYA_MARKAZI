@@ -7,35 +7,34 @@ export const LanguageProvider = ({ children }) => {
   const location = useLocation();
   const navigate = useNavigate();
 
-  // 1. Инициализируем состояние из localStorage или ставим 'uz' по умолчанию
-  const [language, setLanguage] = useState(() => {
-    return localStorage.getItem('userLanguage') || 'uz';
-  });
+  // Проверяем: если путь начинается с /[a-z]{2}, то это язык, иначе узбекский
+  const getLangFromPath = (path) => {
+    const match = path.match(/^\/([a-z]{2})/);
+    return match ? match[1] : 'uz';
+  };
+
+  const [language, setLanguage] = useState(getLangFromPath(location.pathname));
 
   useEffect(() => {
-    // 2. Достаем язык из URL
-    const pathLanguage = location.pathname.match(/\/([a-z]{2})/)?.[1];
-
-    if (pathLanguage) {
-      if (pathLanguage !== language) {
-        setLanguage(pathLanguage);
-        localStorage.setItem('userLanguage', pathLanguage); // Сохраняем, если изменился путь
-      }
-    } else {
-      // Если в URL нет языка (например, просто /about), редиректим на сохраненный
-      navigate(`/${language}${location.pathname}`);
+    const currentLang = getLangFromPath(location.pathname);
+    if (currentLang !== language) {
+      setLanguage(currentLang);
     }
-  }, [location.pathname, language, navigate]);
+  }, [location.pathname]);
 
   const changeLanguage = (lang) => {
-    if (lang !== language) {
-      setLanguage(lang);
-      localStorage.setItem('userLanguage', lang); // 3. Сохраняем при ручном переключении
-      
-      // Заменяем текущий язык в пути на новый
-      const newPath = location.pathname.replace(/^\/[a-z]{2}/, `/${lang}`);
-      navigate(newPath);
+    if (lang === language) return;
+
+    const basePath = location.pathname.replace(/^\/[a-z]{2}/, '') || '/';
+    let newPath;
+    if (lang === 'uz') {
+      newPath = basePath;
+    } else {
+      newPath = `/${lang}${basePath}`;
     }
+
+    // Очистка от двойных слешей (//) и переход
+    navigate(newPath.replace(/\/+/g, '/'));
   };
 
   return (

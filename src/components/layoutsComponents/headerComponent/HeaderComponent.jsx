@@ -40,10 +40,6 @@ export default function HeaderComponent() {
       title: "Antropologiya instituti",
       subtitle: "O'zbekiston Respublikasi Fanlar akademiyasi"
     },
-    ru: {
-      title: "Институт антропологии",
-      subtitle: "Академия наук Республики Узбекистан",
-    },
     en: {
       title: "Institute of Anthropology",
       subtitle: "Academy of Sciences of the Republic of Uzbekistan",
@@ -62,7 +58,7 @@ export default function HeaderComponent() {
 
         <div className='header__container'>
           <div className='header__logo'>
-            <Link to={`/${language}`}>
+            <Link to={`/${language === "uz" ? "" : language}`}>
               <img src={logoImage} alt="Логотип" />
             </Link>
           </div>

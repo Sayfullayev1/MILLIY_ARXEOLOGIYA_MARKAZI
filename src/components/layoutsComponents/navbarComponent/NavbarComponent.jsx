@@ -1,295 +1,313 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { useNavigate, useLocation, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './navbarComponent.scss';
 import { LanguageContext } from '../../../context/LanguageContext';
 import SearchComponent from './items/SearchComponent';
 
 export default function NavbarComponent() {
-  const navigate = useNavigate();
-  const location = useLocation();
+  // const navigate = useNavigate();
+  // const location = useLocation();
   const { language } = useContext(LanguageContext);
   const [openSubmenuIndex, setOpenSubmenuIndex] = useState(null); // Состояние для управления открытием подменю
 
-  useEffect(() => {
-    if (location.pathname === '/') {
-      navigate('/uz'); // Default language can be set to 'en'
-    }
-  }, [location, navigate]);
+  // useEffect(() => {
+  //   if (location.pathname === '/') {
+  //     navigate('/uz'); // Default language can be set to 'en'
+  //   }
+  // }, [location, navigate]);
 
   let data = [  
       {
         Name: {
           uz: "Bosh sahifa",
-          ru: "Главная",
-          en: "Main",
-        },
-        link: "/",
-        items: "",
-      },
-      {
-        Name: {
-          uz: "Biz to'g'rimizda",
-          ru: "О нас",
-          en: "About us",
+          en: "Home",
         },
         link: "",
         items: [
           {
             Name: {
-              uz: "Institut tarixi",
-              ru: "История института",
-              en: "History of the institute",
+              uz: "Missiya",
+              en: "missiya",
             },
             link: "/history-of-the-center",
-
-            extendedItems: ""
           },
           {
             Name: {
-              uz: "Bo'limlar va Laboratoriyalar",
-              ru: "Отделы и лаборатории",
+              uz: "Tuzilma",
+              ru: "Tuzilma",
               en: "Departments and laboratories",
             },
             link: "",
-
-            extendedItems: [
-              {
-                Name: {
-                  uz: "Bioarxeologiya laboratoriyasi",
-                  ru: "Лаборатория биотехнологии",
-                  en: "Bioarchaeology Laboratory",
-                },
-                link: "/bioarchaeology-laboratory",
-              },
-              {
-                Name: {
-                  uz: "Fanlararo tadqiqotlar bo'limi",
-                  ru: "Междисциплинарный отдел",
-                  en: "Interdisciplinary Research Department",
-                },
-                link: "/interdisciplinary-research",
-              },
-              {
-                Name: {
-                  uz: "Ipak yo'li arxeologiya bo'limi",
-                  ru: "Отдел археологии Шёлкового пути",
-                  en: "Silk Road Archaeology Department",
-                },
-                link: "/silk-road-archeology-department",
-              },
-              {
-                Name: {
-                  uz: "Lanshaft arxeologiyasi laboratoriyasi",
-                  ru: "Лаборатория ландшафтной археологии",
-                  en: "Landscape Archaeology Laboratory",
-                },
-                link: "/landscape-archeology-laboratory",
-              }
-            ],
           },
           {
             Name: {
               uz: "Rahbariyat",
-              ru: "Руководство",
-              en: "Management",
+              en: "Rahbariyat",
             },
             link: "/management",
-            extendedItems: ""
           },
           {
             Name: {
-              uz: "Institut nizomi",
-              ru: "Устав института",
-              en: "Charter of the institute",
+              uz: "Jurnal",
+              en: "Jurnal",
             },
             link: "/charter-of-the-center",
-
-            extendedItems: ""
           },
           {
             Name: {
-              uz: "Institut academiklari",
-              ru: "Академики института",
-              en: "Academics of the institute",
+              uz: "E’lonlar/Yangiliklar",
+              en: "E’lonlar/Yangiliklar",
             },
             link: "/academics-of-the-center",
-
-            extendedItems: ""
           },
+          {
+            Name: {
+              uz: "Bog‘lanish",
+              en: "Bog‘lanish",
+            },
+            link: "/contacts",
+          }
         ],
       },
       {
         Name: {
-          uz: "Nashrlar",
-          ru: "Публикации",
-          en: "Publications",
-
-          items: {
-            
-          },
+          uz: "Research \n Output",
+          en: "Research \n Output",
         },
-        link: "/loyihalar",
-        items: [
-          {
-            Name: {
-              uz: "Maqolalar",
-              ru: "Статьи",
-              en: "Articles",
-            },
-            link: "/articles",
-
-            extendedItems: ""
-          },
-          {
-            Name: {
-              uz: "Monografiyalar",
-              ru: "Монографии",
-              en: "Monographs",
-            },
-            link: "/monographs",
-
-            extendedItems: ""
-          },
-          {
-            Name: {
-              uz: "O'quv qo'llanmalar",
-              ru: "Учебные пособия",
-              en: "Tutorials",
-            },
-            link: "/teaching-aids",
-
-            extendedItems: ""
-          },
-          {
-            Name: {
-              uz: "O'zbekiston moddiy madaniyati tarixi",
-              ru: "История материальной культуры Узбекистана",
-              en: "History of material culture of Uzbekistan",
-            },
-            link: "/uzbekistan-history-of-material-culture",
-
-            extendedItems: ""
-          },
-        ],
-      },
-      {
-        Name: {
-          uz: "Faoliyat",
-          ru: "Деятельность",
-          en: "Activity",
-
-          items: {
-
-          },
-        },
-        link: "",
-        items: [
-            {
-              Name: {
-                uz: "Eng muhim ilmiy kashfiyotlar",
-                ru: "Важнейшие результаты исследований",
-                en: "The most important research results",
-              },
-              link: "/the-most-important-research-results",
-
-              extendedItems: ""
-            },
-            {
-              Name: {
-                uz: "Ilim-fan chora-tadbirlar rejasi",
-                ru: "План действий по науке",
-                en: "Science Action Plan",
-              },
-              link: "/science-action-plan",
-
-              extendedItems: ""
-            },
-            {
-              Name: {
-                uz: "Yosh olimlar kengashi",
-                ru: "Совет молодых ученых",
-                en: "Board of young scientists",
-              },
-              link: "/board-of-young-scientists",
-
-              extendedItems: ""
-            },
-          ]
-      },
-      {
-        Name: {
-          uz: "Yangiliklar",
-          ru: "Новости",
-          en: "News",
-        },
-
         link: "",
         items: [
           {
             Name: {
-              uz: "Yangiliklar",
-              ru: "Новости",
-              en: "News",
+              uz: "Publication",
+              en: "Publication",
             },
-            link: "/news",
-
-            extendedItems: ""
+            link: "/publication",
           },
           {
             Name: {
-              uz: "E'lonlar",
-              ru: "Обьявления",
-              en: "Ads",
+              uz: "Sitation Metriks",
+              en: "Sitation Metriks",
             },
-            link: "/ads",
-
-            extendedItems: "",
+            link: "/sitation-metriks",
           },
           {
             Name: {
-              uz: "Tadbirlar",
-              ru: "События",
-              en: "Events",
+              uz: "Conferance Talks",
+              en: "Conferance Talks",
             },
-            link: "/events",
-
-            extendedItems: ""
-          },
-          {
-            Name: {
-              uz: "Chorshanba o'qishlari",
-              ru: "Чтения по средам",
-              en: "Wednesday-readings",
-            },
-            link: "/wednesday-readings",
-
-            extendedItems: ""
-          },
-          {
-            Name: {
-              uz: "Fotogalereya",
-              ru: "Фотогалерея",
-              en: "Photo Gallery",
-            },
-            link: "/photo-gallery",
-
-            extendedItems: ""
+            link: "/conferance-talks",
           },
         ],
       },
       {
         Name: {
-          uz: "Aloqa",
-          ru: "Контакты",
-          en: "Contacts",
+          uz: "Innovation & \n commercialization",
+          en: "Innovation & \n commercialization",
         },
-
-        link: "/contacts",
-        items: "",
+        link: "",
+        items: [
+          {
+            Name: {
+              uz: "Foydali model",
+              en: "Foydali model",
+            },
+            link: "/publication",
+          },
+          {
+            Name: {
+              uz: "Ilmiy hizmat",
+              en: "Ilmiy hizmat",
+            },
+            link: "/sitation-metriks",
+          },
+        ],
+      },
+      {
+        Name: {
+          uz: "Human \n capital",
+          en: "Human \n capital",
+        },
+        link: "",
+        items: [
+          {
+            Name: {
+              uz: "Himoyalar",
+              en: "Himoyalar",
+            },
+            link: "/publication",
+          },
+          {
+            Name: {
+              uz: "Yosh izlanuvchilar",
+              en: "Yosh izlanuvchilar",
+            },
+            link: "/sitation-metriks",
+          },
+          {
+            Name: {
+              uz: "Ilmiy rahbarlar",
+              en: "Ilmiy rahbarlar",
+            },
+            link: "/sitation-metriks",
+          },
+          {
+            Name: {
+              uz: "Mukofotlar",
+              en: "Mukofotlar",
+            },
+            link: "/sitation-metriks",
+          },
+          {
+            Name: {
+              uz: "A’zoliklar",
+              en: "A’zoliklar",
+            },
+            link: "/sitation-metriks",
+          },
+        ],
+      },
+      {
+        Name: {
+          uz: "International \n Collaboration",
+          en: "International \n Collaboration",
+        },
+        link: "",
+        items: [
+          {
+            Name: {
+              uz: "Xalqaro loyiha/grantlar",
+              en: "Xalqaro loyiha/grantlar",
+            },
+            link: "/publication",
+          },
+          {
+            Name: {
+              uz: "Xalqaro hammualliflik",
+              en: "Xalqaro hammualliflik",
+            },
+            link: "/sitation-metriks",
+          },
+          {
+            Name: {
+              uz: "Xalqaro dasturlar",
+              en: "Xalqaro dasturlar",
+            },
+            link: "/sitation-metriks",
+          },
+          {
+            Name: {
+              uz: "Xalqaro tadbirlar",
+              en: "Xalqaro tadbirlar",
+            },
+            link: "/sitation-metriks",
+          },
+          {
+            Name: {
+              uz: "Xalqaro xodimlar",
+              en: "Xalqaro xodimlar",
+            },
+            link: "/sitation-metriks",
+          },
+        ],
+      },
+      {
+        Name: {
+          uz: "Impact & \n Engagement",
+          en: "Impact & \n Engagement",
+        },
+        link: "",
+        items: [
+          {
+            Name: {
+              uz: "OAV chiqishlari",
+              en: "OAV chiqishlari",
+            },
+            link: "/publication",
+          },
+          {
+            Name: {
+              uz: "Ilmiy tashkilotchilik",
+              en: "Ilmiy tashkilotchilik",
+            },
+            link: "/sitation-metriks",
+          },
+          {
+            Name: {
+              uz: "Ijtimoiy tarmoqlar",
+              en: "Ijtimoiy tarmoqlar",
+            },
+            link: "/sitation-metriks",
+          },
+          {
+            Name: {
+              uz: "Ekspert kengashlari",
+              en: "Ekspert kengashlari",
+            },
+            link: "/sitation-metriks",
+          },
+          {
+            Name: {
+              uz: "Ichki tadbirlar",
+              en: "Ichki tadbirlar",
+            },
+            link: "/sitation-metriks",
+          },
+        ],
+      },
+      {
+        Name: {
+          uz: "Digital \n Infrastructure",
+          en: "Digital \n Infrastructure",
+        },
+        link: "",
+        items: [
+          {
+            Name: {
+              uz: "Sayt xaritasi",
+              en: "Sayt xaritasi",
+            },
+            link: "/publication",
+          },
+          {
+            Name: {
+              uz: "Hodim profillar",
+              en: "Hodim profillar",
+            },
+            link: "/sitation-metriks",
+          },
+          {
+            Name: {
+              uz: "Raqamli boshqaruv",
+              en: "Raqamli boshqaruv",
+            },
+            link: "/sitation-metriks",
+          },
+          {
+            Name: {
+              uz: "Shaxsiy KPI",
+              en: "Shaxsiy KPI",
+            },
+            link: "/sitation-metriks",
+          },
+          {
+            Name: {
+              uz: "Kiberxavfsizlik",
+              en: "Kiberxavfsizlik",
+            },
+            link: "/sitation-metriks",
+          },
+          {
+            Name: {
+              uz: "Galereya",
+              en: "Galereya",
+            },
+            link: "/sitation-metriks",
+          },
+        ],
       },
     ]
 
-
+    
 
     const handleSubmenuClick = (index) => {
       setOpenSubmenuIndex((prevIndex) => (prevIndex === index ? null : index)); // Переключаем состояние
@@ -315,7 +333,7 @@ export default function NavbarComponent() {
                   >
                     <Link
                       className='navbar__item__link'
-                      to={`/${language}${item.link}`}
+                      to={language === 'uz' ? item.link : `/${language}${item.link}`}
                       onClick={(e) => {
                         if (item.items && item.items.length > 0) {
                           e.preventDefault(); // Предотвращаем переход только если есть подменю
@@ -323,57 +341,32 @@ export default function NavbarComponent() {
                         }
                       }}
                     >
-                      {item.Name[language]}
+                      {item.Name[language].split('\n').map((line, i) => (
+                        <span key={i}>
+                          {line}
+                          {i < item.Name[language].split('\n').length - 1 && <br />}
+                        </span>
+                      ))}
                     </Link>
                     
-                    {item.items && item.items.length > 0 && (
+                    {item?.items && item.items.length > 0 && (
                       <ul className={`navbar__submenu ${openSubmenuIndex === index ? 'navbar__submenu--visible' : ''}`}>
-                        {item.items.map((subItem, subIndex) => {
+                        {item?.items.map((subItem, subIndex) => {
 
                           return(
-                            <li className={`navbar__submenu__item ${subItem.extendedItems.length > 0 ? "navbar__submenu__extended-item" : ""}`} key={subIndex}>
+                            <li className={`navbar__submenu__item`} key={subIndex}>
                               <Link
                                 className='navbar__submenu__link'
-                                to={
-                                  subItem.extendedItems.length !== 0
-                                    ? undefined
-                                    : `/${language}${subItem.link}`
-                                }
-
+                                to={language === 'uz' ? subItem.link : `/${language}${subItem.link}`}
                               >
                                 {subItem.Name[language]}
                               </Link>
-
-                              {subItem.extendedItems && subItem.extendedItems.length > 0 && (
-                                <div className='navbar__submenu__extended-item__arrow'>
-                                  <i className="fa-solid fa-angle-right"></i>
-                                </div>
-                              )}
-                            
-                              {subItem.extendedItems && subItem.extendedItems.length > 0 && (
-                                <ul className='navbar__extendedItem__list'>
-                                  {
-                                    subItem.extendedItems.map((extendedItem, extendedItemIndex) => {
-                                      return(
-                                        <li className='navbar__extendedItem__item' key={extendedItemIndex}>
-                                          <Link className='navbar__extendedItem__link' to={`/${language}${extendedItem.link}`}>
-                                            {extendedItem.Name[language]}
-                                          </Link>
-                                        </li>
-                                      )
-                                    })
-                                  }
-                                </ul>
-                              )}
-
                             </li>
 
                           )
 
-                             
                         })}
                             
-
                       </ul>
                     )}
                   </li>
